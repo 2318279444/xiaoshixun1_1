@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':week1230'
 rootProject.name='My Application'
