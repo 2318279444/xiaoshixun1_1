@@ -5,6 +5,8 @@ import com.bawei.contract.Icontract;
 import com.bawei.model.Model;
 import com.bawei.week1230.MainActivity;
 
+import java.util.Map;
+
 /*
  *@auther:邓先超
  *@Date: 2019/12/30
@@ -17,8 +19,8 @@ public class MyPresenter extends BasePresenter {
         model=new Model();
     }
 
-    public void toGits(String url,Class cls){
-        model.toGit(url, cls, new Icontract.ToCall() {
+    public void toGits(String url, Map<String,Object> map, Class cls){
+        model.toGit(url,map, cls, new Icontract.ToCall() {
             @Override
             public void success(String stra) {
                 MainActivity mainActivity= (MainActivity) v;

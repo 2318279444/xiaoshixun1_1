@@ -8,5 +8,5 @@ package com.bawei.url;
  **/
 public interface MyUrl {
     String BASE="http://172.17.8.100/small/";
-    String BASEDATE="commodity/v1/commodityList";
+    String BASEDATE="commodity/v1/findCommodityByKeyword";
 }

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.gsm.GsmCellLocation;
+import android.widget.Toast;
 
 import com.bawei.adapter.MyAdapter;
 import com.bawei.base.BaseActivity;
@@ -18,15 +19,27 @@ import com.bawei.url.MyUrl;
 import com.google.gson.Gson;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends BaseActivity implements Icontract.ToCall {
     RecyclerView recyclerView;
 
     @Override
     protected void inidata() {
-        EventBus.getDefault().post("发送数据");
+
+        Map<String,Object> map=new HashMap<>();
+        map.put("keyword","板鞋");
+        map.put("page",1);
+        map.put("count",5);
+
         MyPresenter myPresenter= (MyPresenter) p;
-         myPresenter.toGits(MyUrl.BASEDATE, Shop.class);
+        myPresenter.toGits(MyUrl.BASEDATE,map, Shop.class);
+
+
     }
 
     @Override
@@ -51,7 +64,7 @@ public class MainActivity extends BaseActivity implements Icontract.ToCall {
     public void success(String stra) {
         Gson gson = new Gson();
         Shop shop = gson.fromJson(stra, Shop.class);
-        MyAdapter myAdapter = new MyAdapter(shop.getResult().getMlss().getCommodityList(), this);
+        MyAdapter myAdapter = new MyAdapter(shop.getResult(), this);
         recyclerView.setAdapter(myAdapter);
 
         myAdapter.setCallBack(new MyAdapter.CallBack() {
@@ -59,6 +72,7 @@ public class MainActivity extends BaseActivity implements Icontract.ToCall {
             public void onClick(int position) {
                 Intent intent = new Intent(MainActivity.this, Tiaozhuan.class);
                 startActivity(intent);
+
             }
         });
     }

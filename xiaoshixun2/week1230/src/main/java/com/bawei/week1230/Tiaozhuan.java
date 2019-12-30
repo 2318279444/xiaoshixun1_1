@@ -13,9 +13,12 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bawei.bean.Beandata;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
 
+import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,6 +38,9 @@ public class Tiaozhuan extends AppCompatActivity {
     ImageView timage;
     @BindView(R.id.jieshou)
     Button jieshou;
+    @BindView(R.id.btnfasongg)
+    Button btnfasongg;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +48,6 @@ public class Tiaozhuan extends AppCompatActivity {
         setContentView(R.layout.activity_tiaozhuan);
         ButterKnife.bind(this);
         CodeUtils.init(this);
-
 
 
         timage.setOnLongClickListener(new View.OnLongClickListener() {
@@ -106,9 +111,41 @@ public class Tiaozhuan extends AppCompatActivity {
         });
     }
 
-    @Subscribe
+
     @OnClick(R.id.jieshou)
     public void onViewClicked() {
-
+        EventBus.getDefault().post("123");
     }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
+    }
+
+
+    @Subscribe
+    public void getJsonBean(String json) {
+        Toast.makeText(this, "接受" + json, Toast.LENGTH_SHORT).show();
+    }
+
+
+    @OnClick(R.id.btnfasongg)
+    public void onViewClickedfasongg() {
+        EventBus.getDefault().postSticky(new Beandata("邓先超"));
+    }
+
+
+    @Subscribe(threadMode = ThreadMode.MAIN,sticky = true)
+    public void getJsonBean(Beandata beandata) {
+        Toast.makeText(this, "接受" + beandata.getName(), Toast.LENGTH_SHORT).show();
+    }
+
 }

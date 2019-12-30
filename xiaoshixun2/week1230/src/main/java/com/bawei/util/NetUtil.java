@@ -5,6 +5,7 @@ import com.bawei.get.MyGet;
 import com.bawei.url.MyUrl;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -60,8 +61,8 @@ public class NetUtil {
         return NetHttp.util;
     }
 
-    public void toGit(String url, Class cls, Icontract.ToCall toCall){
-        myGet.toshop(url).observeOn(AndroidSchedulers.mainThread())
+    public void toGit(String url, Map<String,Object> map, Class cls, Icontract.ToCall toCall){
+        myGet.toshop(url,map).observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(new Consumer<ResponseBody>() {
                     @Override
