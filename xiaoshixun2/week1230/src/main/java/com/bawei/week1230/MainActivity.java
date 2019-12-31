@@ -1,13 +1,10 @@
 package com.bawei.week1230;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.telephony.gsm.GsmCellLocation;
-import android.widget.Toast;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bawei.adapter.MyAdapter;
 import com.bawei.base.BaseActivity;
@@ -18,36 +15,37 @@ import com.bawei.presenter.MyPresenter;
 import com.bawei.url.MyUrl;
 import com.google.gson.Gson;
 
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
-
 import java.util.HashMap;
 import java.util.Map;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends BaseActivity implements Icontract.ToCall {
-    RecyclerView recyclerView;
+
+    @BindView(R.id.RecyclerView)
+    androidx.recyclerview.widget.RecyclerView RecyclerView;
 
     @Override
     protected void inidata() {
 
-        Map<String,Object> map=new HashMap<>();
-        map.put("keyword","板鞋");
-        map.put("page",1);
-        map.put("count",5);
+        Map<String, Object> map = new HashMap<>();
+        map.put("keyword", "板鞋");
+        map.put("page", 1);
+        map.put("count", 5);
 
-        MyPresenter myPresenter= (MyPresenter) p;
-        myPresenter.toGits(MyUrl.BASEDATE,map, Shop.class);
+        MyPresenter myPresenter = (MyPresenter) p;
+        myPresenter.toGits(MyUrl.BASEDATE, map, Shop.class);
 
 
     }
 
     @Override
     protected void iniview() {
-        recyclerView=findViewById(R.id.RecyclerView);
-        LinearLayoutManager manager=new LinearLayoutManager(this);
+
+        LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(RecyclerView.VERTICAL);
-        recyclerView.setLayoutManager(manager);
+        RecyclerView.setLayoutManager(manager);
     }
 
     @Override
@@ -65,7 +63,7 @@ public class MainActivity extends BaseActivity implements Icontract.ToCall {
         Gson gson = new Gson();
         Shop shop = gson.fromJson(stra, Shop.class);
         MyAdapter myAdapter = new MyAdapter(shop.getResult(), this);
-        recyclerView.setAdapter(myAdapter);
+        RecyclerView.setAdapter(myAdapter);
 
         myAdapter.setCallBack(new MyAdapter.CallBack() {
             @Override
@@ -76,4 +74,5 @@ public class MainActivity extends BaseActivity implements Icontract.ToCall {
             }
         });
     }
+
 }

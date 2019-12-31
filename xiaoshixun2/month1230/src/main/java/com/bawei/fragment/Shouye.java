@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import com.bawei.base.BaseFragment;
 import com.bawei.base.BasePresenter;
@@ -13,11 +14,9 @@ import org.greenrobot.eventbus.EventBus;
 
 public class Shouye extends BaseFragment {
 
-
-
     @Override
     protected void inidata(Bundle savedInstanceState) {
-        EventBus.getDefault().post("123");
+
     }
 
     @Override
