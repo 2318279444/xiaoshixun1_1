@@ -16,34 +16,20 @@ import org.greenrobot.eventbus.ThreadMode;
 public class Fenlei extends BaseFragment {
 
 
-    Button button;
-
-
 
     @Override
     protected void inidata(Bundle savedInstanceState) {
-        EventBus.getDefault().register(this);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EventBus.getDefault().post("1231313213132132");
-            }
-        });
+
 
 
     }
 
 
-
-    @Subscribe
-    public void toEvent(String s){
-        Toast.makeText(getActivity(), ""+s, Toast.LENGTH_SHORT).show();
-    }
 
 
     @Override
     protected void iniview(View view) {
-        button= getActivity().findViewById(R.id.btn);
+
     }
 
     @Override

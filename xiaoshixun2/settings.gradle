@@ -1,2 +1,2 @@
-include ':app', ':week1230', ':week1230_1_2', ':month1230', ':dengxianchao20191231'
+include ':app', ':week1230', ':week1230_1_2', ':month1230', ':dengxianchao20191231', ':day1231', ':shujuku1_2', ':shujuku1_3', ':rikao0102'
 rootProject.name='My Application'

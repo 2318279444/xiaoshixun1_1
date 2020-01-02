@@ -50,6 +50,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
                 .apply(RequestOptions.bitmapTransform(new RoundedCorners(300)))
                 .into(holder.imageView);
 
+
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
