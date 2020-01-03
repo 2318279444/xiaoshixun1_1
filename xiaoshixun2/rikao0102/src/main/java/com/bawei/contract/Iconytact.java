@@ -10,4 +10,8 @@ public interface Iconytact {
     public interface ToCall{
         void success(String json);
     }
+
+    public interface  CallBanner{
+        void success(Object o);
+    }
 }

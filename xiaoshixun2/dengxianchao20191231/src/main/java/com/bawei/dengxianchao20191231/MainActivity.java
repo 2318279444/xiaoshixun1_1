@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -52,7 +53,7 @@ public class MainActivity extends BaseActivity implements Ictract.ToCall {
         textView=findViewById(R.id.fenxiang);
 
         recyclerView=findViewById(R.id.RecyclerView);
-        LinearLayoutManager manager=new LinearLayoutManager(this);
+        LinearLayoutManager manager=new LinearLayoutManager((Context) this);
         manager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(manager);
     }

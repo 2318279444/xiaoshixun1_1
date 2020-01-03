@@ -14,4 +14,7 @@ import retrofit2.http.Url;
 public interface MyGet {
     @GET
     Observable<ResponseBody> toShouye(@Url String url);
+
+    @GET
+    Observable<ResponseBody> tobanner(@Url String url);
 }
