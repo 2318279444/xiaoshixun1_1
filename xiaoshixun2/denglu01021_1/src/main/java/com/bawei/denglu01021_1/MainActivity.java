@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.bawei.base.BaseActivity;
 import com.bawei.base.BasePresenter;
 import com.bawei.bean.MyLogin;
+import com.bawei.bean.Myzhuce;
 import com.bawei.contract.Icontract;
 import com.bawei.presenter.MyPresenter;
 import com.bawei.url.MyUrl;
@@ -29,6 +30,35 @@ public class MainActivity extends BaseActivity implements Icontract.ToCall {
     @Override
     protected void inidata() {
 
+        zhuce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String suser = user.getText().toString().trim();
+                String spwd = pwd.getText().toString().trim();
+                if (suser.isEmpty()||spwd.isEmpty()){
+                    Toast.makeText(MainActivity.this,"不可以为空",Toast.LENGTH_SHORT).show();
+                }else {
+                    Map<String,Object> map=new HashMap<>();
+                    map.put("phone",suser);
+                    map.put("pwd",spwd);
+                    NetUtil.getInstance().toDenglu(MyUrl.BASEZHUCE, Myzhuce.class, map, new Icontract.ToCall() {
+                        @Override
+                        public void success(String stra) {
+                            Gson gson = new Gson();
+                            Myzhuce myzhuce = gson.fromJson(stra, Myzhuce.class);
+                            if (myzhuce.getStatus().equals("1001")){
+                                Toast.makeText(MainActivity.this,myzhuce.getMessage(),Toast.LENGTH_SHORT).show();
+                            }else {
+                                Toast.makeText(MainActivity.this,myzhuce.getMessage(),Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+                    });
+
+                }
+            }
+        });
+
 
         denglu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,7 +66,7 @@ public class MainActivity extends BaseActivity implements Icontract.ToCall {
                 String suser = user.getText().toString().trim();
                 String spwd = pwd.getText().toString().trim();
                 if (suser.isEmpty()||spwd.isEmpty()){
-                    Toast.makeText(MainActivity.this,"aaaaaaaa",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"不可以为空",Toast.LENGTH_SHORT).show();
                 }else {
                     Map<String,Object> map=new HashMap<>();
                     map.put("phone",suser);

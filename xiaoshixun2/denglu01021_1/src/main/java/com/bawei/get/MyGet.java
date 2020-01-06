@@ -18,4 +18,8 @@ import retrofit2.http.Url;
 public interface MyGet {
     @POST
     Observable<ResponseBody> toDenglu(@Url String url, @QueryMap Map<String,Object> map);
+
+    @POST
+    Observable<ResponseBody> tozhuce(@Url String url,@QueryMap Map<String,Object> map);
+
 }

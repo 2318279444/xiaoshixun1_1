@@ -79,11 +79,13 @@ public class MainActivity extends BaseActivity implements Iconytact.ToCall {
 
     @Override
     protected void iniview() {
+        //hrid布局,实现每行两条数据
         recyclerView2=findViewById(R.id.RecyclerView2);
         GridLayoutManager manager2=new GridLayoutManager(this,2);
         recyclerView2.setLayoutManager(manager2);
 
 
+        //linnar布局
         banner=findViewById(R.id.banner);
         recyclerView=findViewById(R.id.RecyclerView);
         LinearLayoutManager manager=new LinearLayoutManager((Context) this);
@@ -103,13 +105,16 @@ public class MainActivity extends BaseActivity implements Iconytact.ToCall {
 
     @Override
     public void success(String json) {
+        //解析bean类
         Gson gson = new Gson();
         Shop shop = gson.fromJson(json, Shop.class);
+        //展示数据
         MyAdapter myAdapter = new MyAdapter(shop.getResult().getMlss().getCommodityList(), this);
         recyclerView.setAdapter(myAdapter);
 
 
         Shop shop2 = gson.fromJson(json, Shop.class);
+        //展示品质生活的数据
         MypzshAdapter myrxxpAdapter = new MypzshAdapter(shop.getResult().getPzsh().getCommodityList(), this);
         recyclerView2.setAdapter(myrxxpAdapter);
     }
