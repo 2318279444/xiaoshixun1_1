@@ -30,6 +30,7 @@ public class MyShopAdapter extends RecyclerView.Adapter<MyShopAdapter.Holder> {
     List<Shopbean.DataBean> list;
     Context context;
     @BindView(R.id.ima2)
+            
     ImageView ima;
     @BindView(R.id.tex2)
     TextView tex;
