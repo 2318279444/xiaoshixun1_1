@@ -23,17 +23,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:textSize="22dp"
+            android:textSize="33dp"
+            android:text="总量"
+            />
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:textSize="33dp"
+            android:text="XXX"
+            android:id="@+id/zongliang"
+            />
+
+
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:textSize="33dp"
             android:text="总价"
             />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:textSize="22dp"
-            android:text="XXX"
+            android:textSize="33dp"
+            android:text="$$$"
             android:id="@+id/zongjia"
             />
 
@@ -42,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#FF7A07"
-            android:layout_marginLeft="200dp"
+            android:id="@+id/dd"
             android:text="提交订单"/>
 
     </LinearLayout>

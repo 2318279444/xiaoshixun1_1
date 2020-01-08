@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bawei.bean.Shops;
+import com.bawei.rikao0107.Addnet;
 import com.bawei.rikao0107.R;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
@@ -106,6 +107,27 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
                     .placeholder(R.drawable.black_background)
                     .apply(RequestOptions.bitmapTransform(new RoundedCorners(300)))
                     .into(holder.imageView);
+
+
+            holder.checkBox.setChecked(llist.get(position).isStats());
+            holder.checkBox.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    boolean stats = llist.get(position).isStats();
+                    shopCallBack.smallindex(ind,position,stats);
+                }
+            });
+
+
+
+            holder.addnet.setnumber(llist.get(position).getCount());
+            holder.addnet.setJiajianCall(new Addnet.JiajianCall() {
+                @Override
+                public void onClick(int number) {
+                    shopCallBack.jiajian(ind,position,number);
+                }
+            });
+
         }
 
         @Override
@@ -117,6 +139,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
             CheckBox checkBox;
             ImageView imageView;
             TextView name,count,pri;
+            Addnet addnet;
             public smallHolder(@NonNull View itemView) {
                 super(itemView);
 
@@ -125,6 +148,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
                 name=itemView.findViewById(R.id.name);
                 count=itemView.findViewById(R.id.count);
                 pri=itemView.findViewById(R.id.pri);
+                addnet=itemView.findViewById(R.id.jiajianqi);
             }
         }
     }
@@ -133,6 +157,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
 
     public interface ShopCallBack{
         void bigindex(int position);
+        void smallindex(int bigposition,int smallposition,boolean stats);
+        void jiajian(int bigposition,int smallposition,int count);
     }
 
     public ShopCallBack shopCallBack;
@@ -145,7 +171,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
     public void bigindex(int position){
         Shops.ResultBean resultBean = list.get(position);
         boolean stats = resultBean.isStats();
-        resultBean.setStats(!stats);
+        list.get(position).setStats(!stats);
 
         for (int i = 0; i < list.get(position).getShoppingCartList().size(); i++) {
             list.get(position).getShoppingCartList().get(i).setStats(!stats);
@@ -153,4 +179,47 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
     }
 
 
+
+    public void smallindex(int bigposition,int smallposition,boolean stats){
+        boolean flag=true;
+        list.get(bigposition).getShoppingCartList().get(smallposition).setStats(!stats);
+
+        for (int i = 0; i < list.get(bigposition).getShoppingCartList().size(); i++) {
+            if (!list.get(bigposition).getShoppingCartList().get(i).isStats()){
+                flag=false;
+            }
+        }
+        list.get(bigposition).setStats(flag);
+        
+    }
+
+
+    public void jiajiancount(int bigposition,int smallposition,int count){
+        list.get(bigposition).getShoppingCartList().get(smallposition).setCount(count);
+    }
+
+    public int sumprice(){
+        int sum=0;
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = 0; j < list.get(i).getShoppingCartList().size(); j++) {
+                if(list.get(i).getShoppingCartList().get(j).isStats()){
+                    sum+=list.get(i).getShoppingCartList().get(j).getCount()*list.get(i).getShoppingCartList().get(j).getPrice();
+                }
+            }
+        }
+        return sum;
+    }
+
+
+    public int sumcount(){
+        int sum=0;
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = 0; j < list.get(i).getShoppingCartList().size(); j++) {
+                if(list.get(i).getShoppingCartList().get(j).isStats()){
+                    sum+=list.get(i).getShoppingCartList().get(j).getCount();
+                }
+            }
+        }
+        return sum;
+    }
 }
