@@ -3,6 +3,7 @@ package com.bawei.presenter;
 import com.bawei.base.BasePresenter;
 import com.bawei.contract.Icontract;
 import com.bawei.model.MyModel;
+import com.bawei.rikao0107.Adress;
 import com.bawei.rikao0107.MainActivity;
 
 import java.util.Map;
@@ -26,6 +27,17 @@ public class MyPresenter extends BasePresenter {
             public void success(String stra) {
                 MainActivity mainActivity= (MainActivity) v;
                 mainActivity.success(stra);
+            }
+        });
+    }
+
+
+    public void pAdress(String url,Class cls,Map<String,Object> map){
+        myModel.mAdress(url, cls, map, new Icontract.adressCallBack() {
+            @Override
+            public void success(String stra) {
+                Adress adress= (Adress) v;
+                adress.success(stra);
             }
         });
     }

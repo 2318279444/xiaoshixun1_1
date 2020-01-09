@@ -10,4 +10,8 @@ public interface Icontract {
     public interface ToCall{
         void success(String stra);
     }
+
+    public interface ToShopCall{
+        void success(String stra);
+    }
 }

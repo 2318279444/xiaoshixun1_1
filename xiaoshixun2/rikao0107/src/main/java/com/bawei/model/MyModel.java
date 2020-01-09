@@ -21,4 +21,13 @@ public class MyModel {
             }
         });
     }
+
+    public void mAdress(String url,Class cls,Map<String,Object> map,Icontract.adressCallBack adressCallBack){
+        NetUtil.getInstance().netAdress(url, cls, map, new Icontract.adressCallBack() {
+            @Override
+            public void success(String stra) {
+                adressCallBack.success(stra);
+            }
+        });
+    }
 }

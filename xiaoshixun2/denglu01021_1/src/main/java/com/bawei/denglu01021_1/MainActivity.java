@@ -76,10 +76,13 @@ public class MainActivity extends BaseActivity implements Icontract.ToCall {
                         public void success(String stra) {
                             Gson gson = new Gson();
                             MyLogin myLogin = gson.fromJson(stra, MyLogin.class);
+                            String sessionId = myLogin.getResult().getSessionId();
                             if (myLogin.getStatus().equals("1001")){
                                 Toast.makeText(MainActivity.this,myLogin.getMessage(),Toast.LENGTH_SHORT).show();
                             }else {
+
                                 Intent intent = new Intent(MainActivity.this, Login.class);
+                                intent.putExtra("sessionId",sessionId);
                                 startActivity(intent);
                             }
 

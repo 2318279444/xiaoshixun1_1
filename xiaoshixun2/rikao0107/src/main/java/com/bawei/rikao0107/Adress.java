@@ -1,18 +1,16 @@
-package com.bawei.denglu01021_1;
+package com.bawei.rikao0107;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.TextView;
 
 import com.bawei.adapter.MyAdapter;
+import com.bawei.adapter.MyAdressAdapter;
 import com.bawei.base.BaseActivity;
 import com.bawei.base.BasePresenter;
-import com.bawei.base.Shops;
+import com.bawei.bean.Adressbean;
 import com.bawei.contract.Icontract;
 import com.bawei.presenter.MyPresenter;
 import com.bawei.url.MyUrl;
@@ -21,36 +19,29 @@ import com.google.gson.Gson;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Login extends BaseActivity implements Icontract.ToShopCall {
+public class Adress extends BaseActivity implements Icontract.adressCallBack {
     RecyclerView recyclerView;
     @Override
     protected void inidata() {
-
-        Intent intent = getIntent();
-        String sessionId = intent.getStringExtra("sessionId");
-
         Map<String,Object> map=new HashMap<>();
         map.put("userId",10962);
-        map.put("sessionId",sessionId);
-        Log.e("aaa",""+intent.getStringExtra("sessionId"));
+        map.put("sessionId","157853121795610962");
         MyPresenter myPresenter= (MyPresenter) p;
-         myPresenter.pShop(MyUrl.BASEGWC, Shops.class,map);
+        myPresenter.pAdress(MyUrl.BASEADRESS, Adressbean.class,map);
     }
 
     @Override
     protected void iniview() {
-        recyclerView=findViewById(R.id.RecyclerView);
+        recyclerView=findViewById(R.id.adressRecyclervire);
 
         LinearLayoutManager manager=new LinearLayoutManager(this);
         manager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(manager);
-
-
     }
 
     @Override
     protected int inilayout() {
-        return R.layout.activity_login;
+        return R.layout.activity_adress;
     }
 
     @Override
@@ -61,8 +52,8 @@ public class Login extends BaseActivity implements Icontract.ToShopCall {
     @Override
     public void success(String stra) {
         Gson gson = new Gson();
-        Shops shops = gson.fromJson(stra, Shops.class);
-        MyAdapter myAdapter = new MyAdapter(shops.getResult(), this);
-        recyclerView.setAdapter(myAdapter);
+        Adressbean adressbean = gson.fromJson(stra, Adressbean.class);
+        MyAdressAdapter myAdressAdapter = new MyAdressAdapter(adressbean.getResult(), Adress.this);
+        recyclerView.setAdapter(myAdressAdapter);
     }
 }

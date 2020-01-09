@@ -22,4 +22,7 @@ public interface MyGet {
 
     @POST
     Observable<ResponseBody> toDenglu(@Url String url, @QueryMap Map<String,Object> map);
+
+    @GET
+    Observable<ResponseBody> toAdress(@Url String url,@HeaderMap Map<String,Object> map);
 }

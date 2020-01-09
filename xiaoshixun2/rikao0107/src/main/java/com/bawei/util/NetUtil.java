@@ -81,4 +81,16 @@ public class NetUtil {
                     }
                 });
     }
+
+
+    public void netAdress(String url,Class cls,Map<String,Object> map,Icontract.adressCallBack adressCallBack){
+        myGet.toAdress(url,map).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Consumer<ResponseBody>() {
+                    @Override
+                    public void accept(ResponseBody responseBody) throws Exception {
+                        adressCallBack.success(responseBody.string());
+                    }
+                });
+    }
 }

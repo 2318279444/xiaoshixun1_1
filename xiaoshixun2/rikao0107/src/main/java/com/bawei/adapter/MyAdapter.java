@@ -47,6 +47,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
     public void onBindViewHolder(@NonNull Holder holder, int position) {
         holder.bigtextView.setText(list.get(position).getCategoryName());
 
+
         LinearLayoutManager manager=new LinearLayoutManager(context);
         manager.setOrientation(RecyclerView.VERTICAL);
         holder.bigrecyclerView.setLayoutManager(manager);
@@ -128,6 +129,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
                 }
             });
 
+
+
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    shopCallBack.onClick(position);
+                }
+            });
+
         }
 
         @Override
@@ -159,6 +169,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
         void bigindex(int position);
         void smallindex(int bigposition,int smallposition,boolean stats);
         void jiajian(int bigposition,int smallposition,int count);
+        void onClick(int position);
+
     }
 
     public ShopCallBack shopCallBack;

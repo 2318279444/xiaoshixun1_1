@@ -10,4 +10,6 @@ public interface MyUrl {
     String BASE="http://172.17.8.100/small/";
     String BASEURL="order/verify/v1/findShoppingCart";
     String BASEDENGLU="user/v1/login";
+
+    String BASEADRESS="user/verify/v1/receiveAddressList";
 }

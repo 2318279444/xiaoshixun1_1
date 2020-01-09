@@ -10,4 +10,5 @@ public interface MyUrl {
     String BASE="http://172.17.8.100/small/";
     String BASEDENGLU="user/v1/login";
     String BASEZHUCE="user/v1/register";
+    String BASEGWC="order/verify/v1/findShoppingCart";
 }

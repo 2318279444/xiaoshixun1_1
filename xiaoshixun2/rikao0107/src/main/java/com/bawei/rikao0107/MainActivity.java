@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.bawei.adapter.MyAdapter;
@@ -19,7 +20,9 @@ import com.bawei.presenter.MyPresenter;
 import com.bawei.url.MyUrl;
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -29,6 +32,8 @@ public class MainActivity extends BaseActivity implements Icontract.ToCall {
     RecyclerView recyclerView;
     TextView textViewprice,textViewcount;
     Button button;
+    CheckBox checkBox;
+    private Shops shops;
 
     @Override
     protected void inidata() {
@@ -36,10 +41,14 @@ public class MainActivity extends BaseActivity implements Icontract.ToCall {
 
 
         Map<String,Object> map=new HashMap<>();
-        map.put("sessionId","157844447467810962");
+        map.put("sessionId","157853121795610962");
         map.put("userId",10962);
         MyPresenter myPresenter= (MyPresenter) p;
         myPresenter.pShop(MyUrl.BASEURL, Shops.class,map);
+
+
+
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +60,8 @@ public class MainActivity extends BaseActivity implements Icontract.ToCall {
 
     @Override
     protected void iniview() {
+        checkBox=findViewById(R.id.checkwai);
+
         button=findViewById(R.id.dd);
 
         textViewprice=findViewById(R.id.zongjia);
@@ -76,7 +87,7 @@ public class MainActivity extends BaseActivity implements Icontract.ToCall {
     @Override
     public void success(String stra) {
         Gson gson = new Gson();
-        Shops shops = gson.fromJson(stra, Shops.class);
+        shops = gson.fromJson(stra, Shops.class);
         MyAdapter myAdapter = new MyAdapter(shops.getResult(), this);
         recyclerView.setAdapter(myAdapter);
 
@@ -103,6 +114,11 @@ public class MainActivity extends BaseActivity implements Icontract.ToCall {
                 textViewprice.setText(myAdapter.sumprice()+"");
                 textViewcount.setText(myAdapter.sumcount()+"");
                 myAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onClick(int position) {
+                startActivity(new Intent(MainActivity.this,Adress.class));
             }
         });
     }

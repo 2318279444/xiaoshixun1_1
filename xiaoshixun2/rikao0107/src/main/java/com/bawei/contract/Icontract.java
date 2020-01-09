@@ -10,4 +10,9 @@ public interface Icontract {
     public interface ToCall{
         void success(String stra);
     }
+
+
+    public interface adressCallBack{
+        void success(String stra);
+    }
 }

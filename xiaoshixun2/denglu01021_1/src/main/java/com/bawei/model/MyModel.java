@@ -21,4 +21,14 @@ public class MyModel {
             }
         });
     }
+
+
+    public void mShop(String url,Class cls,Map<String,Object> map,Icontract.ToShopCall toShopCall){
+        NetUtil.getInstance().netShop(url, cls, map, new Icontract.ToShopCall() {
+            @Override
+            public void success(String stra) {
+                toShopCall.success(stra);
+            }
+        });
+    }
 }

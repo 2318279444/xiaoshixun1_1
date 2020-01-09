@@ -84,4 +84,17 @@ public class NetUtil {
                 });
     }
 
+
+
+    public void netShop(String url,Class cls,Map<String,Object> map,Icontract.ToShopCall toShopCall){
+        myGet.toShop(url,map).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Consumer<ResponseBody>() {
+                    @Override
+                    public void accept(ResponseBody responseBody) throws Exception {
+                        toShopCall.success(responseBody.string());
+                    }
+                });
+    }
+
 }
