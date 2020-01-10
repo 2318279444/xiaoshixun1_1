@@ -28,12 +28,21 @@ import java.util.Map;
 
 
 //购物车就是在接口里面候区数据.真实数据,页面可以实现联动效果,又全选和反选,以及价格数量商品总价的一个联动
+
+
+
+//加密算法有对称加密和非对称加密,对此加密是AES和DES,非对称加密是RSA,还有MD5
+//MD5是一个不可逆的加密方式,还有https
+
+
+
 public class MainActivity extends BaseActivity implements Icontract.ToCall {
     RecyclerView recyclerView;
     TextView textViewprice,textViewcount;
     Button button;
     CheckBox checkBox;
     private Shops shops;
+    private String sessionId;
 
     @Override
     protected void inidata() {
@@ -41,9 +50,19 @@ public class MainActivity extends BaseActivity implements Icontract.ToCall {
 
 
         Map<String,Object> map=new HashMap<>();
-        map.put("sessionId","157853121795610962");
+
+        Intent intent = getIntent();
+        sessionId = intent.getStringExtra("sessionId");
+        map.put("sessionId", sessionId);
         map.put("userId",10962);
         MyPresenter myPresenter= (MyPresenter) p;
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         myPresenter.pShop(MyUrl.BASEURL, Shops.class,map);
 
 
@@ -118,7 +137,9 @@ public class MainActivity extends BaseActivity implements Icontract.ToCall {
 
             @Override
             public void onClick(int position) {
-                startActivity(new Intent(MainActivity.this,Adress.class));
+                Intent intent = new Intent(MainActivity.this, Adress.class);
+                intent.putExtra("sessionId",sessionId);
+                startActivity(intent);
             }
         });
     }

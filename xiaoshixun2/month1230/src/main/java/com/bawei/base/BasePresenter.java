@@ -6,7 +6,7 @@ package com.bawei.base;
  *@Time:14:55
  *@Description:
  **/
-public class BasePresenter<V extends BaseFragment> {
+public class BasePresenter<V extends BaseActivity> {
     public V v;
 
     public void attach(V v){

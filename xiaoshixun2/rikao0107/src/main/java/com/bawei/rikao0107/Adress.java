@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.bawei.adapter.MyAdapter;
@@ -24,8 +25,10 @@ public class Adress extends BaseActivity implements Icontract.adressCallBack {
     @Override
     protected void inidata() {
         Map<String,Object> map=new HashMap<>();
+        Intent intent = getIntent();
+        String sessionId = intent.getStringExtra("sessionId");
         map.put("userId",10962);
-        map.put("sessionId","157853121795610962");
+        map.put("sessionId",sessionId);
         MyPresenter myPresenter= (MyPresenter) p;
         myPresenter.pAdress(MyUrl.BASEADRESS, Adressbean.class,map);
     }

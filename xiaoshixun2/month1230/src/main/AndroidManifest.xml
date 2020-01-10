@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.bawei.fragment.Wode"></activity>
+        <activity android:name=".OrderFragment"></activity>
+        <activity android:name="com.bawei.fragment.Wode" />
         <activity android:name="com.bawei.fragment.Shoucang" />
         <activity android:name="com.bawei.fragment.Gouwuche" />
         <activity android:name="com.bawei.fragment.Fenlei" />

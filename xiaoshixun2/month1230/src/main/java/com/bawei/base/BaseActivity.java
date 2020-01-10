@@ -11,12 +11,15 @@ import androidx.appcompat.app.AppCompatActivity;
  *@Time:14:55
  *@Description:
  **/
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity {
+    public P p;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(inilayout());
-
+        if(p!=null){
+            p.attach(this);
+        }
         iniview();
 
         inidata();
@@ -27,4 +30,14 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected abstract void iniview();
 
     protected abstract int inilayout();
+    protected abstract P Ipresenter();
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(p!=null){
+            p.unattach();
+            p=null;
+        }
+    }
 }

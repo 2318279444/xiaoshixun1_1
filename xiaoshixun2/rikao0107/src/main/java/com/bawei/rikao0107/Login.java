@@ -9,8 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.bawei.base.BaseActivity;
+import com.bawei.base.BasePresenter;
 import com.bawei.bean.DengluBean;
 import com.bawei.contract.Icontract;
+import com.bawei.presenter.MyPresenter;
 import com.bawei.url.MyUrl;
 import com.bawei.util.NetUtil;
 import com.google.gson.Gson;
@@ -20,18 +23,15 @@ import org.greenrobot.eventbus.EventBus;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Login extends AppCompatActivity {
+public class Login extends BaseActivity {
 
     EditText user,pwd;
     Button denglu;
 
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        user=findViewById(R.id.user);
-        pwd=findViewById(R.id.pwd);
-        denglu=findViewById(R.id.denglu);
+    protected void inidata() {
 
         denglu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,16 +47,36 @@ public class Login extends AppCompatActivity {
                     public void success(String stra) {
                         Gson gson = new Gson();
                         DengluBean dengluBean = gson.fromJson(stra, DengluBean.class);
-                        if(dengluBean.getStatus().equals(0000)){
-                            EventBus.getDefault().post(dengluBean.getResult().getSessionId());
-                            startActivity(new Intent(Login.this,MainActivity.class));
+                        String sessionId = dengluBean.getResult().getSessionId();
+                        if(dengluBean.getStatus().equals("0000")){
+                            Intent intent = new Intent(Login.this, MainActivity.class);
+                            intent.putExtra("sessionId",sessionId);
+                            startActivity(intent);
                         }else {
-                            Toast.makeText(Login.this, "账号密码错误", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, dengluBean.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
             }
         });
 
+    }
+
+    @Override
+    protected void iniview() {
+        user=findViewById(R.id.user);
+        pwd=findViewById(R.id.pwd);
+        denglu=findViewById(R.id.denglu);
+
+    }
+
+    @Override
+    protected int inilayout() {
+        return R.layout.activity_login;
+    }
+
+    @Override
+    protected BasePresenter Ipresenter() {
+        return new MyPresenter();
     }
 }
