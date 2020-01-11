@@ -24,6 +24,7 @@ public class Adress extends BaseActivity implements Icontract.adressCallBack {
     RecyclerView recyclerView;
     @Override
     protected void inidata() {
+        //map传值
         Map<String,Object> map=new HashMap<>();
         Intent intent = getIntent();
         String sessionId = intent.getStringExtra("sessionId");
