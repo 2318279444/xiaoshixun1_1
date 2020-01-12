@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -13,6 +14,7 @@ import com.bawei.base.BasePresenter;
 import com.bawei.bean.Shops;
 import com.bawei.contract.Icontract;
 import com.bawei.presenter.MyPresenter;
+import com.bawei.rikao0111.Pay;
 import com.bawei.rikao0111.R;
 import com.bawei.url.MyUrl;
 import com.google.gson.Gson;
@@ -26,8 +28,8 @@ public class Quanbu extends BaseFragment implements Icontract.ToCall {
     @Override
     protected void inidata(Bundle savedInstanceState) {
         Map<String,Object> map=new HashMap<>();
+        map.put("sessionId","157878971018210962");
         map.put("userId",10962);
-        map.put("sessionId","157870470863410962");
         Map<String,Object> map1=new HashMap<>();
         map1.put("status",0);
         map1.put("page",1);
@@ -62,5 +64,15 @@ public class Quanbu extends BaseFragment implements Icontract.ToCall {
         Shops shops = gson.fromJson(stra, Shops.class);
         MyAdapter myAdapter = new MyAdapter(shops.getOrderList(), getActivity());
         recyclerView.setAdapter(myAdapter);
+
+
+        //接口回调,点击跳转到支付页面
+        myAdapter.setShopCallBack(new MyAdapter.ShopCallBack() {
+            @Override
+            public void onclick(int position) {
+                Intent intent = new Intent(getActivity(), Pay.class);
+                startActivity(intent);
+            }
+        });
     }
 }

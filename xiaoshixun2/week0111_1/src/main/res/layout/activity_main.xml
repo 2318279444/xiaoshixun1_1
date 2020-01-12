@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/icon8"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:layout_marginTop="100dp"
+        android:textColor="#FFF"
+        android:layout_width="match_parent"
+        android:text="18519653350"
+        android:layout_height="wrap_content"
+        android:id="@+id/user"/>
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:textColor="#FFF"
+        android:layout_width="match_parent"
+        android:password="true"
+        android:text="123456"
+        android:layout_height="wrap_content"
+        android:id="@+id/pwd"/>
+
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2095FD"
+        android:text="登录"
+        android:id="@+id/denglu"/>
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2095FD"
+        android:text="注册"
+        android:id="@+id/zhuce"/>
+
+</LinearLayout>

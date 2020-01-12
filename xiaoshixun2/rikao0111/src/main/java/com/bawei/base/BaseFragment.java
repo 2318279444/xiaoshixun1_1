@@ -21,10 +21,11 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        p=Opresenter();
         if(p!=null){
             p.attacg(this);
         }
-        p=Opresenter();
+
         return inflater.inflate(inilayout(),container,false);
     }
 

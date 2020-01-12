@@ -90,6 +90,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
 
             holder.name.setText(llist.get(position).getCommodityName());
             holder.pri.setText(llist.get(position).getCommodityPrice()+"");
+
+
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    shopCallBack.onclick(position);
+                }
+            });
         }
 
         @Override
@@ -109,5 +117,20 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
             }
         }
     }
+
+
+    public interface ShopCallBack{
+        void onclick(int position);
+    }
+
+    public ShopCallBack shopCallBack;
+
+    public void setShopCallBack(ShopCallBack shopCallBack){
+        this.shopCallBack=shopCallBack;
+    }
+
+
+
+
 
 }

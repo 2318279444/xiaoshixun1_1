@@ -1,5 +1,7 @@
 package com.bawei.presenter;
 
+import android.util.Log;
+
 import com.bawei.base.BasePresenter;
 import com.bawei.contract.Icontract;
 import com.bawei.fragment.Quanbu;
@@ -26,6 +28,7 @@ public class MyPresenter extends BasePresenter {
             public void success(String stra) {
                 Quanbu quanbu= (Quanbu) v;
                 quanbu.success(stra);
+                Log.e("aaa","noi"+stra);
             }
         });
     }
