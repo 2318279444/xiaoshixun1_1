@@ -11,10 +11,11 @@ import java.util.List;
 public class ShopBean {
 
 
+
     private String message;
     private String status;
     private List<ResultBean> result;
-    private boolean Stadus;
+    private boolean Stadus=false;
 
     public boolean isStadus() {
         return Stadus;

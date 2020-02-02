@@ -7,7 +7,7 @@ package com.bawei.url;
  *@Description:
  **/
 public interface MyUrl {
-    String BASE="http://172.17.8.100/small/";
+    String BASE="http://mobile.bwstudent.com/small/";
     String BASEURL="order/verify/v1/findShoppingCart";
     String BASEDENGLU="user/v1/login";
 

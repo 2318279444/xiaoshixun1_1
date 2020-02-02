@@ -62,6 +62,7 @@ public class MainActivity extends BaseActivity implements Icontract.ToLoginCallB
             public void onClick(View v) {
                 String suser = user.getText().toString().trim();
                 String spwd = pwd.getText().toString().trim();
+
                 String string = EncryptUtils.encryptMD5ToString(String.valueOf(pwd));
                 Log.e("aaa","md5"+string);
                 Map<String,Object> map=new HashMap<>();

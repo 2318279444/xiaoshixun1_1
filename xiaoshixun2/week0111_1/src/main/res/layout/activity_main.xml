@@ -21,7 +21,7 @@
         android:textColor="#FFF"
         android:layout_width="match_parent"
         android:password="true"
-        android:text="123456"
+        android:text="a123456789"
         android:layout_height="wrap_content"
         android:id="@+id/pwd"/>
 

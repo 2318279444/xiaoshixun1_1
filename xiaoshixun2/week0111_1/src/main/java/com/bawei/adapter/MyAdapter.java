@@ -53,6 +53,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
         holder.bigrecyclerView.setAdapter(new small(list.get(position).getShoppingCartList(),position));
 
 
+
+
+        /////////////////////////最外层全选,商家商品联动
+
+
         holder.bigcheckBox.setChecked(list.get(position).isStadus());
         holder.bigcheckBox.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,13 +65,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
                 shopCallBack.bigindex(position);
             }
         });
-
-
     }
+
+
 
     @Override
     public int getItemCount() {
-        return list.size();
+        if (list!=null){
+
+            return list.size();
+        }
+        return 0;
+
     }
 
     class Holder extends RecyclerView.ViewHolder{
@@ -116,8 +126,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
             holder.checkBox.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    boolean stadus = list.get(position).isStadus();
+                    boolean stadus = llist.get(position).isStadus();
                     shopCallBack.samllindex(ind,position,stadus);
+                    notifyDataSetChanged();
                 }
             });
 
@@ -159,6 +170,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
 
 
 
+
+
+
+
+
+
     public interface ShopCallBack{
         void bigindex(int bigindex);
         void samllindex(int bigindex,int smallindex,boolean stadus);
@@ -179,7 +196,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
         for (int i = 0; i < list.get(position).getShoppingCartList().size(); i++) {
             list.get(position).getShoppingCartList().get(i).setStadus(!stadus);
         }
-        
+
     }
 
 
@@ -216,6 +233,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
     }
 
 
+
+
+
     public int sumprice(){
         int sum=0;
         for (int i = 0; i < list.size(); i++) {
@@ -227,4 +247,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
         }
         return sum;
     }
+
+
 }

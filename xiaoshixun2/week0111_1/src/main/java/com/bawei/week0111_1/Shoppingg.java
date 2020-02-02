@@ -4,6 +4,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,18 +20,29 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.gson.Gson;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Shoppingg extends BaseActivity implements Icontract.ToCall {
     ImageView imageView;
     TextView textView;
+    SmartRefreshLayout smartRefreshLayout;
 
 
     TextView zongjia,zongliang;
 
     RecyclerView recyclerView;
+
+    CheckBox che;
+    private ShopBean shopBean;
+
+    List<ShopBean.ResultBean> list=new ArrayList<>();
+    private MyAdapter myAdapter;
+    private boolean status;
 
 
     @Override
@@ -39,11 +52,36 @@ public class Shoppingg extends BaseActivity implements Icontract.ToCall {
 
         Map<String,Object> map=new HashMap<>();
         map.put("sessionId",sessionId);
-        map.put("userId",10962);
+        map.put("userId",27818);
 
 
         MyPresenter myPresenter= (MyPresenter) p;
         myPresenter.pShop(MyUrl.BaseGWC, ShopBean.class,map);
+
+        smartRefreshLayout.setEnableRefresh(true);
+        smartRefreshLayout.setEnableLoadMore(true);
+        smartRefreshLayout.finishRefresh();
+        smartRefreshLayout.finishLoadMore();
+
+
+
+
+        che.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                 shopBean.setStadus(!status);
+                status = shopBean.isStadus();
+                che.setChecked(status);
+
+                for (int i = 0; i < list.size(); i++) {
+                    list.get(i).setStadus(status);
+                    for (int j = 0; j < list.get(i).getShoppingCartList().size(); j++) {
+                        list.get(i).getShoppingCartList().get(j).setStadus(status);
+                    }
+                }
+                myAdapter.notifyDataSetChanged();
+            }
+        });
 
 
 
@@ -55,12 +93,11 @@ public class Shoppingg extends BaseActivity implements Icontract.ToCall {
         String phone = intent.getStringExtra("phone");
         textView.setText(phone);
 
-
-
     }
 
     @Override
     protected void iniview() {
+        smartRefreshLayout=findViewById(R.id.fresh);
 
         zongjia=findViewById(R.id.zongjia);
         zongliang=findViewById(R.id.zongliang);
@@ -72,6 +109,8 @@ public class Shoppingg extends BaseActivity implements Icontract.ToCall {
 
         imageView=findViewById(R.id.ima);
         textView=findViewById(R.id.se);
+
+        che=findViewById(R.id.che);
     }
 
     @Override
@@ -86,12 +125,17 @@ public class Shoppingg extends BaseActivity implements Icontract.ToCall {
 
 
 
+
     @Override
     public void successshop(String stra) {
         Gson gson = new Gson();
-        ShopBean shopBean = gson.fromJson(stra, ShopBean.class);
-        MyAdapter myAdapter = new MyAdapter(shopBean.getResult(), this);
+        shopBean = gson.fromJson(stra, ShopBean.class);
+        list.addAll(shopBean.getResult());
+        myAdapter = new MyAdapter(list, this);
         recyclerView.setAdapter(myAdapter);
+
+        status = shopBean.isStadus();
+        che.setChecked(status);
 
         myAdapter.setShopCallBack(new MyAdapter.ShopCallBack() {
             @Override

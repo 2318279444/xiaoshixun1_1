@@ -46,7 +46,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
         holder.bigtextView.setText(list.get(position).getCategoryName());
-        Log.e("aaa","big"+list.get(position).getCategoryName());
+        Log.e("aaa","big1"+list.get(position).getCategoryName());
 
         LinearLayoutManager manager=new LinearLayoutManager(context);
         manager.setOrientation(RecyclerView.VERTICAL);
