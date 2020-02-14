@@ -59,9 +59,9 @@ public class GwcActivityyyy extends BaseActivity implements Icontract.ToCall {
                 shops.setStu(!stu);
                 for (int i = 0; i < list.size(); i++) {
                     list.get(i).setStu(stu);
+
                     for (int j = 0; j < list.get(i).getShoppingCartList().size(); j++) {
                         list.get(i).getShoppingCartList().get(j).setStu(stu);
-
                         co.setText(myAdapter.sumc()+"");
                         pr.setText(myAdapter.sump()+"");
                     }

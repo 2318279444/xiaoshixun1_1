@@ -19,4 +19,7 @@ import retrofit2.http.Url;
 public interface MyGet {
     @GET
     Observable<ResponseBody> toDingDan(@Url String url, @HeaderMap Map<String,Object> map , @QueryMap Map<String,Object> map1);
+
+    @GET
+    Observable<ResponseBody> toDingDan2(@Url String url, @HeaderMap Map<String,Object> map , @QueryMap Map<String,Object> map1);
 }

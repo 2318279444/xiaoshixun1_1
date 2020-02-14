@@ -10,4 +10,6 @@ public interface MyUrl {
     String BASE="http://mobile.bwstudent.com/small/";
 
     String BASEDD="order/verify/v1/findOrderListByStatus";
+
+    String BASEDD2="order/verify/v1/findOrderListByStatus";
 }

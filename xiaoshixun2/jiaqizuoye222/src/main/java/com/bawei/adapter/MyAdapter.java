@@ -179,7 +179,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
         boolean flag=true;
         list.get(bigposition).getShoppingCartList().get(smallposition).setStu(!stuuuu);
         for (int i = 0; i < list.get(bigposition).getShoppingCartList().size(); i++) {
-            if(!list.get(bigposition).getShoppingCartList().get(smallposition).isStu()){
+            if(!list.get(bigposition).getShoppingCartList().get(i).isStu()){
                 flag=false;
             }
         }

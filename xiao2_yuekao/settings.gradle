@@ -1,0 +1,2 @@
+include ':app', ':shopcar'
+rootProject.name='xiao2_yuekao'

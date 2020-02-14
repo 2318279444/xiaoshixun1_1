@@ -6,9 +6,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import com.bawei.adapter.MyAdapter;
+import com.bawei.adapter.MyAdapter2;
 import com.bawei.base.BaseFragment;
 import com.bawei.base.BasePresenter;
 import com.bawei.bean.Shops;
@@ -28,8 +31,8 @@ public class Quanbu extends BaseFragment implements Icontract.ToCall {
     @Override
     protected void inidata(Bundle savedInstanceState) {
         Map<String,Object> map=new HashMap<>();
-        map.put("sessionId","157878971018210962");
-        map.put("userId",10962);
+        map.put("sessionId","158140189585227818");
+        map.put("userId",27818);
         Map<String,Object> map1=new HashMap<>();
         map1.put("status",0);
         map1.put("page",1);
@@ -42,6 +45,7 @@ public class Quanbu extends BaseFragment implements Icontract.ToCall {
 
     @Override
     protected void iniview(View view) {
+
         recyclerView=getActivity().findViewById(R.id.RecyclerView);
         LinearLayoutManager manager=new LinearLayoutManager(getActivity());
         manager.setOrientation(RecyclerView.VERTICAL);
@@ -66,13 +70,5 @@ public class Quanbu extends BaseFragment implements Icontract.ToCall {
         recyclerView.setAdapter(myAdapter);
 
 
-        //接口回调,点击跳转到支付页面
-        myAdapter.setShopCallBack(new MyAdapter.ShopCallBack() {
-            @Override
-            public void onclick(int position) {
-                Intent intent = new Intent(getActivity(), Pay.class);
-                startActivity(intent);
-            }
-        });
     }
 }
