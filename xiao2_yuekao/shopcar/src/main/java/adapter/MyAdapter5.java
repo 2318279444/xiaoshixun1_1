@@ -17,7 +17,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 import bean.DingdanBean;
@@ -28,13 +27,13 @@ import bean.DingdanBean;
  *@Time:14:03
  *@Description:
  **/
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
+public class MyAdapter5 extends RecyclerView.Adapter<MyAdapter5.Holder> {
     List<DingdanBean.OrderListBean> list;
     Context context;
 
     String st="http://mobile.bwstudent.com/images/small/commodity/mzhf/cz/4/1.jpg,http://mobile.bwstudent.com/images/small/commodity/mzhf/cz/4/2.jpg,http://mobile.bwstudent.com/images/small/commodity/mzhf/cz/4/3.jpg,http://mobile.bwstudent.com/images/small/commodity/mzhf/cz/4/4.jpg,http://mobile.bwstudent.com/images/small/commodity/mzhf/cz/4/5.jpg";
 
-    public MyAdapter(List<DingdanBean.OrderListBean> list, Context context) {
+    public MyAdapter5(List<DingdanBean.OrderListBean> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -42,19 +41,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
     @NonNull
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.big, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.big4, null);
         return new Holder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
         holder.danhao.setText(list.get(position).getOrderId()+"");
-
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        String format = simpleDateFormat.format(list.get(position).getOrderTime());
-
-
-        holder.shijian.setText(format+"");
+        holder.shijian.setText(list.get(position).getOrderTime()+"");
 
 
         Log.e("aaa","danhao"+list.get(position).getOrderId());

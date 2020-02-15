@@ -1,6 +1,7 @@
 package com.bawei.shopcar;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -78,9 +79,15 @@ public class MainActivity extends BaseActivity {
                         Gson gson = new Gson();
                         DengluBean dengluBean = gson.fromJson(stra, DengluBean.class);
                         String status = dengluBean.getStatus();
+                        String sessionId = dengluBean.getResult().getSessionId();
+//                        Bundle bundle = new Bundle();
+//                        bundle.putString("sessionId",sessionId);
+//                        quanbu.setArguments(bundle);
+
+
                         if(status.equals("0000")){
                             Intent intent = new Intent(MainActivity.this, ShouYe.class);
-
+                            intent.putExtra("sessionId",sessionId);
                             startActivity(intent);
                             Toast.makeText(MainActivity.this, dengluBean.getMessage(), Toast.LENGTH_SHORT).show();
                         }else {

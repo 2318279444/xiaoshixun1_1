@@ -11,7 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShouYe"></activity>
+        <activity android:name=".Finis"></activity>
+        <activity android:name=".Daip" />
+        <activity android:name=".Dais" />
+        <activity android:name=".Daifu" />
+        <activity android:name=".Quanbu" />
+        <activity android:name=".OrderformFragment" />
+        <activity android:name=".ShouYe" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

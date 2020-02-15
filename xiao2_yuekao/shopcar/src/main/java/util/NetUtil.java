@@ -1,5 +1,7 @@
 package util;
 
+import android.widget.TextView;
+
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import java.util.Map;
@@ -69,6 +71,17 @@ public class NetUtil {
 
     public void NetDenglu(String url,Class cls,Map<String,Object> map,Icontract.ToCall toCall){
         myGet.toDenglu(url,map).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Consumer<ResponseBody>() {
+                    @Override
+                    public void accept(ResponseBody responseBody) throws Exception {
+                        toCall.success(responseBody.string());
+                    }
+                });
+    }
+
+    public void NetDingDan(String url, Class cls, Map<String,Object> map, Map<String,Object> map1, Icontract.ToCall toCall){
+        myGet.toDingdan(url,map,map1).observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(new Consumer<ResponseBody>() {
                     @Override
