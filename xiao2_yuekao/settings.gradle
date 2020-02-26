@@ -1,2 +1,2 @@
-include ':app', ':shopcar', ':dingdannn_2', ':myapplication'
+include ':app', ':shopcar', ':dingdannn_2', ':myapplication', ':did_1', ':dengxianchao2020218'
 rootProject.name='xiao2_yuekao'

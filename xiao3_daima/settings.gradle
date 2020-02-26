@@ -1,0 +1,2 @@
+include ':app', ':rikaoday1_02_21', ':zhoumozuoye2020_02_22', ':dengxianchao20200224', ':weiduyingyuan', ':frescotupian'
+rootProject.name='xiao3_daima'
