@@ -18,17 +18,20 @@
     <EditText
         android:layout_marginTop="100dp"
         android:layout_width="match_parent"
+        android:id="@+id/putname"
         android:layout_height="wrap_content"
         android:hint="请输入昵称"/>
     <EditText
         android:layout_marginTop="22dp"
         android:layout_width="match_parent"
+        android:id="@+id/putemail"
         android:layout_height="wrap_content"
         android:hint="请输入邮箱账号"/>
 
     <EditText
         android:layout_marginTop="22dp"
         android:layout_width="match_parent"
+        android:id="@+id/putpwd"
         android:layout_height="wrap_content"
         android:hint="请输入密码"/>
 
@@ -40,6 +43,7 @@
             android:layout_marginTop="22dp"
             android:layout_width="0dp"
             android:layout_weight="7"
+            android:id="@+id/putyzm"
             android:layout_height="wrap_content"
             android:hint="请输入验证码"/>
 
@@ -68,6 +72,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
+        android:id="@+id/zcyzc"
         android:textSize="22dp"
         android:text="注册"
         android:background="#F5155C"/>

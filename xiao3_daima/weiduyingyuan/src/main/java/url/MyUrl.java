@@ -10,4 +10,8 @@ public interface MyUrl {
     String BASE="http://mobile.bwstudent.com/";
 
     String BASEDengLu="movieApi/user/v2/login";
+
+    String BASEYOUXIANG="movieApi/user/v2/sendOutEmailCode";
+
+    String BASEZHUCE="movieApi/user/v2/register";
 }

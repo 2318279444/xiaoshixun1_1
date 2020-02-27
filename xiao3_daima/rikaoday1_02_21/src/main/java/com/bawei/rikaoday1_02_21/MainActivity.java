@@ -31,12 +31,16 @@ public class MainActivity extends AppCompatActivity {
         pager=findViewById(R.id.pager);
 
 
+        //给tablayout添加引导词
         slist.add("首页");
         slist.add("发现");
         slist.add("我的");
 
+        //获取登陆页面传过来的数据
+        //传递到dragment里面
         Intent intent = getIntent();
         String headPic = intent.getStringExtra("headPic");
+        //打印传递到信息
         Log.e("aaa",""+headPic);
 
         woDe = new WoDe();
@@ -63,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         //展示
         pager.setAdapter(myAdapter);
 
+        //设置点击的改变图标的动画
         tabLayout.getTabAt(0).setIcon(R.drawable.sy);
         tabLayout.getTabAt(1).setIcon(R.drawable.fx);
         tabLayout.getTabAt(2).setIcon(R.drawable.wd);

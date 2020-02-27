@@ -20,6 +20,10 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        p=Ipresenter();
+        if(p!=null){
+            p.attach(this);
+        }
         return inflater.inflate(inilayout(),container,false);
     }
 
@@ -41,4 +45,15 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
     protected abstract void iniview(View view);
     protected abstract int inilayout();
     protected abstract P Ipresenter();
+
+
+    //解绑
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if(p!=null){
+            p.unattach();
+            p=null;
+        }
+    }
 }

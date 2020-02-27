@@ -5,12 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.FaXian">
-    <TextView
-        android:id="@+id/te2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="发现"
-        android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="66dp" />
+
+
 </RelativeLayout>

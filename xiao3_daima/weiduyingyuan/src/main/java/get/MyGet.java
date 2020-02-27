@@ -4,6 +4,8 @@ import java.util.Map;
 
 import io.reactivex.Observable;
 import okhttp3.ResponseBody;
+import retrofit2.http.FieldMap;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 import retrofit2.http.Url;
 
@@ -14,6 +16,22 @@ import retrofit2.http.Url;
  *@Description:
  **/
 public interface MyGet {
+    //登录
+    @FormUrlEncoded
     @POST
-    Observable<ResponseBody> toDenglu(@Url String url, Map<String,Object> map);
+    Observable<ResponseBody> toDenglu(@Url String url, @FieldMap Map<String,Object> map);
+
+
+    //获取验证码
+    @FormUrlEncoded
+    @POST
+    Observable<ResponseBody> toYanZM(@Url String url,@FieldMap Map<String,Object> map);
+
+
+    //注册
+    @FormUrlEncoded
+    @POST
+    Observable<ResponseBody> toZhuCe(@Url String url,@FieldMap Map<String,Object> map);
+
+
 }

@@ -6,13 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".fragment.ShoYe">
 
-    <TextView
-        android:id="@+id/te1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ProgressBar
+        android:layout_width="match_parent"
         android:layout_centerInParent="true"
-        android:text="首页"
         android:layout_centerHorizontal="true"
-        android:textSize="66dp" />
+        android:orientation="horizontal"
+        android:layout_height="50dp"/>
+
 
 </RelativeLayout>

@@ -15,6 +15,7 @@ import okhttp3.ResponseBody;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.Url;
 import url.MyUrl;
 
 /*
@@ -67,6 +68,32 @@ public class NetUtil {
                     }
                 });
     }
+
+    public void NetEmail(String url,Class cls,Map<String,Object> map,Icontract.ToCall toCall){
+        myGet.toYanZM(url, map).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Consumer<ResponseBody>() {
+                    @Override
+                    public void accept(ResponseBody responseBody) throws Exception {
+                        toCall.success(responseBody.string());
+                    }
+                });
+    }
+
+
+    public void NetZhuce(String url,Class cls,Map<String,Object> map,Icontract.ToCall toCall){
+        myGet.toZhuCe(url, map).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Consumer<ResponseBody>() {
+                    @Override
+                    public void accept(ResponseBody responseBody) throws Exception {
+                        responseBody.string();
+                    }
+                });
+    }
+
+
+
 
 
 }
