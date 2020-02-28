@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">weiduyingyuan</string>
+    <string name="open">string_open</string>
+    <string name="close">string_close</string>
 </resources>

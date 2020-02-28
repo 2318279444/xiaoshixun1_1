@@ -1,5 +1,6 @@
 package util;
 
+import com.google.gson.Gson;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import java.util.Map;
@@ -69,6 +70,8 @@ public class NetUtil {
                 });
     }
 
+
+
     public void NetEmail(String url,Class cls,Map<String,Object> map,Icontract.ToCall toCall){
         myGet.toYanZM(url, map).observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
@@ -81,13 +84,28 @@ public class NetUtil {
     }
 
 
+
     public void NetZhuce(String url,Class cls,Map<String,Object> map,Icontract.ToCall toCall){
         myGet.toZhuCe(url, map).observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(new Consumer<ResponseBody>() {
                     @Override
                     public void accept(ResponseBody responseBody) throws Exception {
-                        responseBody.string();
+                        toCall.success(responseBody.string());
+                    }
+                });
+    }
+
+
+    public void NetBanner(String url,Class cls,Icontract.ToBannerCall toBannerCall){
+        myGet.toBanner(url).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Consumer<ResponseBody>() {
+                    @Override
+                    public void accept(ResponseBody responseBody) throws Exception {
+                        Gson gson = new Gson();
+                        Object o = gson.fromJson(responseBody.string(), cls);
+                        toBannerCall.seccess(o);
                     }
                 });
     }

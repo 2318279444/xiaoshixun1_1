@@ -10,4 +10,8 @@ public interface Icontract {
     public interface ToCall{
         void success(String stra);
     }
+
+    public interface ToBannerCall{
+        void seccess(Object o);
+    }
 }

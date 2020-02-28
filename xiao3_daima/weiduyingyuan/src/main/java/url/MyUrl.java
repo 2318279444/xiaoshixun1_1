@@ -14,4 +14,6 @@ public interface MyUrl {
     String BASEYOUXIANG="movieApi/user/v2/sendOutEmailCode";
 
     String BASEZHUCE="movieApi/user/v2/register";
+
+    String BASEBANNER="movieApi/tool/v2/banner";
 }

@@ -1,7 +1,5 @@
 package presenter;
 
-import com.bawei.weiduyingyuan.ZhuCeZH;
-
 import java.util.Map;
 
 import base.BasePresenter;

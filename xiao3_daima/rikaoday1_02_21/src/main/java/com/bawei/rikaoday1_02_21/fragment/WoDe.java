@@ -26,10 +26,13 @@ public class WoDe extends BaseFragment {
 
     @Override
     protected void inidata(Bundle savedInstanceState) {
+        //使用Argunents传值,吧头像信息传递过来;
         Bundle arguments = getArguments();
 
+        //实例化头像信息
         String headPic = arguments.getString("headPic");
 
+        //使用Glide展示头像
         Glide.with(getActivity()).load(headPic).into(imageView);
 
 

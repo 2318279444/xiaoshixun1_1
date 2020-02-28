@@ -2,16 +2,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bawei.weiduyingyuan">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:icon="@drawable/dyicon"
+        android:label="维度影院"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ZhuCeZH"></activity>
-        <activity android:name=".LoginActivity">
+        <activity android:name=".YingFragment.YingAction"></activity>
+        <activity android:name=".YingFragment.YingFuJin" />
+        <activity android:name=".YingFragment.YingTuiJian" />
+        <activity android:name=".NaviFragment" />
+        <activity android:name=".flzc.ZhuCeZH" />
+        <activity android:name=".flzc.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +26,7 @@
         <activity android:name="fragment.WoDe" />
         <activity android:name="fragment.YingYuan" />
         <activity android:name="fragment.ShouYe" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

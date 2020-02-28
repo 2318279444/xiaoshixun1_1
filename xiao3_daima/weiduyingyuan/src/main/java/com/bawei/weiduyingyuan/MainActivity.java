@@ -1,6 +1,9 @@
 package com.bawei.weiduyingyuan;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
@@ -13,12 +16,17 @@ import fragment.YingYuan;
 public class MainActivity extends AppCompatActivity {
     FragmentManager manager;
     RadioGroup radioGroup;
+    DrawerLayout dralay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         radioGroup=findViewById(R.id.rg);
+        dralay=findViewById(R.id.drawlay);
+
+        iniActionBar();
+
 
 
         ShouYe shouYe = new ShouYe();
@@ -54,6 +62,16 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+    }
+
+    private void iniActionBar() {
+
+        ActionBar supportActionBar = getSupportActionBar();
+        supportActionBar.setDisplayHomeAsUpEnabled(true);
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,dralay, R.string.open, R.string.close);
+
+
 
     }
 }

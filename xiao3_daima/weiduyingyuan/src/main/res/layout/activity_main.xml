@@ -1,61 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:id="@+id/drawlay"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        >
+
+        <FrameLayout
+            android:id="@+id/frag"
+            android:layout_weight="9"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
+        <RadioGroup
+            android:id="@+id/rg"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:background="#0A024E"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/sy"
+                android:text="主页"
+                android:checked="true"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:id="@+id/radio1"
+                />
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:button="@null"
+                android:drawableTop="@drawable/y"
+                android:text="影院"
+                android:gravity="center"
+                android:id="@+id/radio2"
+                />
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:button="@null"
+                android:drawableTop="@drawable/wd"
+                android:text="我的"
+                android:gravity="center"
+                android:id="@+id/radio3"
+                />
+
+        </RadioGroup>
+
+
+
+    </LinearLayout>
+
     <FrameLayout
-        android:id="@+id/frag"
-        android:layout_weight="9"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"/>
+        class="com.bawei.weiduyingyuan.NaviFragment"
+        android:layout_width="366dp"
+        android:layout_height="match_parent"
+        android:background="#F7F7F7"
+        android:layout_gravity="start"
+        />
 
-    <RadioGroup
-        android:id="@+id/rg"
-        android:orientation="horizontal"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp">
-
-        <RadioButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawableTop="@drawable/sy"
-            android:text="主页"
-            android:checked="true"
-            android:textSize="30dp"
-            android:gravity="center"
-            android:id="@+id/radio1"
-            />
-        <RadioButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawableTop="@drawable/y"
-            android:text="影院"
-            android:textSize="30dp"
-            android:gravity="center"
-            android:id="@+id/radio2"
-            />
-        <RadioButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawableTop="@drawable/wd"
-            android:text="我的"
-            android:textSize="30dp"
-            android:gravity="center"
-            android:id="@+id/radio3"
-            />
-
-    </RadioGroup>
-
-
-</LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
