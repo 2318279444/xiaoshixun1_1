@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".YingFragment.YingAction"></activity>
+        <activity android:name=".yingyuan.YingXiangqingFragment.MovieElaFragment"></activity>
+        <activity android:name=".yingyuan.YingXiangqingFragment.MovieXQFragment" />
+        <activity android:name=".yingyuan.YingTuiJianXiangqing" />
+        <activity android:name=".yingyuanjump.YingYuanSouSuo" />
+        <activity android:name=".YingFragment.YingAction" />
         <activity android:name=".YingFragment.YingFuJin" />
         <activity android:name=".YingFragment.YingTuiJian" />
         <activity android:name=".NaviFragment" />

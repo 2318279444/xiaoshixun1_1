@@ -38,6 +38,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.youth.banner:banner:1.4.9'
+    //noinspection GradleCompatible
     implementation 'com.android.support:design:28.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation 'com.google.code.gson:gson:2.4'
@@ -45,8 +46,6 @@ dependencies {
 
 
     implementation 'org.greenrobot:eventbus:3.1.1'
-    implementation("com.squareup.okhttp3:okhttp:4.2.2")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.2.1")
     implementation 'com.jakewharton:butterknife:10.2.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
 
@@ -80,4 +79,12 @@ dependencies {
     // AndroidX用户依赖	android工具类库-MD5加密
     implementation 'com.blankj:utilcodex:1.26.0'
 
+    //SmartRefresh依赖
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+//ok
+
+    implementation 'com.squareup.okhttp3:okhttp:3.0.1'
+
+
+    implementation'com.squareup.okhttp3:logging-interceptor:3.4.1'
 }

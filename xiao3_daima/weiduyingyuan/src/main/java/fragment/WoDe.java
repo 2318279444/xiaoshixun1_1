@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +21,9 @@ public class WoDe extends BaseFragment {
 
     @Override
     protected void inidata(Bundle savedInstanceState) {
-
+        Bundle arguments = getArguments();
+        String sessionId = arguments.getString("sessionId");
+        Log.e("aaa","wode:sessionId:"+sessionId);
     }
 
     @Override

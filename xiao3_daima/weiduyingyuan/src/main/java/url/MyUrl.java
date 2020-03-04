@@ -16,4 +16,13 @@ public interface MyUrl {
     String BASEZHUCE="movieApi/user/v2/register";
 
     String BASEBANNER="movieApi/tool/v2/banner";
+
+    String BASERecommendMove="movieApi/cinema/v1/findRecommendCinemas";
+
+    String BASEYING_FUJIN="movieApi/cinema/v1/findNearbyCinemas";
+
+
+    String BASEYING_XQ_LEFT="movieApi/cinema/v1/findCinemaInfo";
+
+    String BASEYING_PL_RIGHT="movieApi/cinema/v1/findAllCinemaComment";
 }

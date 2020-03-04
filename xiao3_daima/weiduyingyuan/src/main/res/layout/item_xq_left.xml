@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="33dp"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:text="地址:"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:id="@+id/XQaddress"
+            android:textColor="#fff"
+            android:layout_marginLeft="20dp"
+            android:textSize="22dp"
+            android:text="1321213"/>
+
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="33dp"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:text="电话:"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:id="@+id/XQphone"
+            android:textColor="#fff"
+            android:layout_marginLeft="20dp"
+            android:textSize="22dp"
+            android:text="1321213"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="33dp"
+            android:textColor="#fff"
+            android:text="电话:"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:id="@+id/XQstyle"
+            android:textSize="22dp"
+            android:textColor="#fff"
+            android:text="1321213"/>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

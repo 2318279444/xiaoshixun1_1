@@ -14,8 +14,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import base.BaseActivity;
-import bean.EmailBean;
-import bean.ZhuCeBean;
+import bean.LoginRegist.EmailBean;
+import bean.LoginRegist.ZhuCeBean;
 import contract.Icontract;
 import encryption.EncryptUtil;
 import url.MyUrl;
@@ -32,7 +32,6 @@ public class ZhuCeZH extends BaseActivity  {
     protected void inidata() {
         //注册页面回到登陆页面
        zcfinish();
-
 
 
        //获取验证码
@@ -58,7 +57,9 @@ public class ZhuCeZH extends BaseActivity  {
                 String syzm = putyzm.getText().toString().trim();
 
                 String encryptspwd = EncryptUtil.encrypt(spwd);
+                String encryptspwd1 = EncryptUtil.encrypt("d123456");
 
+                Log.e("aaa","密码d123456:"+encryptspwd1);
                 Map<String,Object> map=new HashMap<>();
                 map.put("nickName",sname);
                 map.put("pwd",encryptspwd);

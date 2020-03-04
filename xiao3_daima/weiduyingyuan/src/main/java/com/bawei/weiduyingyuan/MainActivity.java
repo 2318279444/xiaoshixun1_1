@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.RadioGroup;
 
 import fragment.ShouYe;
@@ -17,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
     FragmentManager manager;
     RadioGroup radioGroup;
     DrawerLayout dralay;
+    private ShouYe shouYe;
+    private YingYuan yingYuan;
+    private WoDe woDe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,19 +32,26 @@ public class MainActivity extends AppCompatActivity {
 
         iniActionBar();
 
+        Intent intent = getIntent();
+        String sessionId = intent.getStringExtra("sessionId");
+        Bundle bundle = new Bundle();
+        bundle.putString("sessionId",sessionId);
 
-
-        ShouYe shouYe = new ShouYe();
-        YingYuan yingYuan = new YingYuan();
-        WoDe woDe = new WoDe();
+        Log.e("aaa","main:sessionId:"+sessionId);
+        shouYe = new ShouYe();
+        shouYe.setArguments(bundle);
+        yingYuan = new YingYuan();
+        yingYuan.setArguments(bundle);
+        woDe = new WoDe();
+        woDe.setArguments(bundle);
 
 
         manager=getSupportFragmentManager();
 
         manager.beginTransaction()
-                .add(R.id.frag,shouYe)
-                .add(R.id.frag,yingYuan)
-                .add(R.id.frag,woDe)
+                .add(R.id.frag, shouYe)
+                .add(R.id.frag, yingYuan)
+                .add(R.id.frag, woDe)
                 .show(shouYe).hide(yingYuan).hide(woDe)
                 .commit();
 

@@ -22,4 +22,43 @@ public class Mymodel {
     }
 
 
+    public void mRecommendMovie(String url,Class cls,Map<String,Object> map,Map<String,Object> map1,Icontract.ToCall toCall){
+        NetUtil.getInstance().NetRecommendMovie(url, cls, map, map1, new Icontract.ToCall() {
+            @Override
+            public void success(String stra) {
+                toCall.success(stra);
+            }
+        });
+    }
+
+    public void mFujinMovie(String url,Class cls,Map<String,Object> map,Map<String,Object> map1,Icontract.ToCall toCall){
+        NetUtil.getInstance().NetFujinMovie(url, cls, map, map1, new Icontract.ToCall() {
+            @Override
+            public void success(String stra) {
+                toCall.success(stra);
+            }
+        });
+    }
+
+    public void mXqLeft(String url,Class cls,Map<String,Object> map,Map<String,Object> map1,Icontract.ToCall toCall){
+        NetUtil.getInstance().NetXqLeft(url, cls, map, map1, new Icontract.ToCall() {
+            @Override
+            public void success(String stra) {
+                toCall.success(stra);
+            }
+        });
+    }
+
+    public void mPLRight(String url,Class cls,Map<String,Object> map,Map<String,Object> map1,Icontract.ToCall toCall){
+        NetUtil.getInstance().NetPLRight(url, cls, map, map1, new Icontract.ToCall() {
+            @Override
+            public void success(String stra) {
+                toCall.success(stra);
+            }
+        });
+    }
+
+
+
+
 }

@@ -16,7 +16,6 @@ import okhttp3.ResponseBody;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.Url;
 import url.MyUrl;
 
 /*
@@ -26,13 +25,16 @@ import url.MyUrl;
  *@Description:
  **/
 public class NetUtil {
+
+    //implementation 'com.squareup.okhttp3:okhttp:3.0.1'
+
     OkHttpClient okHttpClient;
     HttpLoggingInterceptor interceptor;
     private final MyGet myGet;
 
     public NetUtil(){
         interceptor=new HttpLoggingInterceptor();
-        interceptor.level(HttpLoggingInterceptor.Level.BODY);
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         okHttpClient=new OkHttpClient.Builder()
                 .readTimeout(10, TimeUnit.SECONDS)
                 .writeTimeout(10,TimeUnit.SECONDS)
@@ -110,6 +112,55 @@ public class NetUtil {
                 });
     }
 
+
+
+
+    public void NetRecommendMovie(String url,Class cls,Map<String,Object> map,Map<String,Object> map1,Icontract.ToCall toCall){
+        myGet.toreCommendMove(url, map,map1).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Consumer<ResponseBody>() {
+                    @Override
+                    public void accept(ResponseBody responseBody) throws Exception {
+                        toCall.success(responseBody.string());
+                    }
+                });
+    }
+
+
+
+    public void NetFujinMovie(String url,Class cls,Map<String,Object> map,Map<String,Object> map1,Icontract.ToCall toCall){
+        myGet.toFujinMovie(url, map,map1).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Consumer<ResponseBody>() {
+                    @Override
+                    public void accept(ResponseBody responseBody) throws Exception {
+                        toCall.success(responseBody.string());
+                    }
+                });
+    }
+
+
+    public void NetXqLeft(String url,Class cls,Map<String,Object> map,Map<String,Object> map1,Icontract.ToCall toCall){
+        myGet.toXqLeft(url, map,map1).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Consumer<ResponseBody>() {
+                    @Override
+                    public void accept(ResponseBody responseBody) throws Exception {
+                        toCall.success(responseBody.string());
+                    }
+                });
+    }
+
+    public void NetPLRight(String url,Class cls,Map<String,Object> map,Map<String,Object> map1,Icontract.ToCall toCall){
+        myGet.toPLRight(url, map,map1).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Consumer<ResponseBody>() {
+                    @Override
+                    public void accept(ResponseBody responseBody) throws Exception {
+                        toCall.success(responseBody.string());
+                    }
+                });
+    }
 
 
 

@@ -31,7 +31,7 @@ public class NetUtil {
 
     public NetUtil(){
         interceptor=new HttpLoggingInterceptor();
-        interceptor.level(HttpLoggingInterceptor.Level.BODY);
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         okHttpClient=new OkHttpClient.Builder()
                 .writeTimeout(10, TimeUnit.SECONDS)
                 .readTimeout(10,TimeUnit.SECONDS)
@@ -70,6 +70,17 @@ public class NetUtil {
 
     public void NEtDenglu(String url, Class cls, Map<String,Object> map, Icontract.ToCall toCall){
         myGet.toDenglu(url, map).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Consumer<ResponseBody>() {
+                    @Override
+                    public void accept(ResponseBody responseBody) throws Exception {
+                        toCall.success(responseBody.string());
+                    }
+                });
+    }
+
+    public void NetShouyr(String url,Class cls,Icontract.ToCall toCall){
+        myGet.toshouye(url).observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(new Consumer<ResponseBody>() {
                     @Override

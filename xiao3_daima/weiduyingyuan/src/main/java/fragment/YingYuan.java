@@ -6,10 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -17,6 +20,7 @@ import com.bawei.weiduyingyuan.R;
 import com.bawei.weiduyingyuan.YingFragment.YingAction;
 import com.bawei.weiduyingyuan.YingFragment.YingFuJin;
 import com.bawei.weiduyingyuan.YingFragment.YingTuiJian;
+import com.bawei.weiduyingyuan.yingyuanjump.YingYuanSouSuo;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -32,17 +36,29 @@ public class YingYuan extends BaseFragment {
     List<String> sl=new ArrayList<>();
     List<Fragment> fl=new ArrayList<>();
     LinearLayout locationbeijing;
-
-
+    EditText yingedit;
+    private String sessionId;
+    private YingTuiJian yingTuiJian;
+    private YingFuJin yingFuJin;
+    private YingAction yingAction;
 
 
     @Override
     protected void inidata(Bundle savedInstanceState) {
-        inis();
 
+        Bundle arguments = getArguments();
+        sessionId = arguments.getString("sessionId");
+        Log.e("aaa","YingYuan:sessionId:"+ sessionId);
+        //添加tab标签
+        inis();
+        //添加tab页面
         inif();
 
+        //土司提示不可切换区域
         inilocationbj();
+
+        //搜索框搜索信息
+        iniss();
 
         MyYingFragmentAdapter myYingFragmentAdapter = new MyYingFragmentAdapter(getFragmentManager(), sl, fl);
 
@@ -50,6 +66,16 @@ public class YingYuan extends BaseFragment {
         pager.setAdapter(myYingFragmentAdapter);
 
 
+    }
+
+    private void iniss() {
+        yingedit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), YingYuanSouSuo.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void inilocationbj() {
@@ -62,9 +88,23 @@ public class YingYuan extends BaseFragment {
     }
 
     private void inif() {
-        fl.add(new YingTuiJian());
-        fl.add(new YingFuJin());
-        fl.add(new YingAction());
+        Bundle bundle = new Bundle();
+        bundle.putString("sessionId",sessionId);
+
+        yingTuiJian = new YingTuiJian();
+        yingTuiJian.setArguments(bundle);
+
+
+        yingFuJin = new YingFuJin();
+        yingFuJin.setArguments(bundle);
+
+
+        yingAction = new YingAction();
+        yingAction.setArguments(bundle);
+
+        fl.add(yingTuiJian);
+        fl.add(yingFuJin);
+        fl.add(yingAction);
     }
 
     private void inis() {
@@ -75,6 +115,7 @@ public class YingYuan extends BaseFragment {
 
     @Override
     protected void iniview(View view) {
+        yingedit=getActivity().findViewById(R.id.yingedit);
         tabLayout= getActivity().findViewById(R.id.tab);
         pager= getActivity().findViewById(R.id.yPager);
         locationbeijing=getActivity().findViewById(R.id.locationbeijing);

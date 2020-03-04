@@ -10,4 +10,6 @@ public interface MyUrl {
     String BASE="http://mobile.bwstudent.com/small/";
     String BASEDENGLU="user/v1/login";
     String BASEZHUCE="user/v1/register";
+
+    String BASESHOUYE="commodity/v1/commodityList";
 }

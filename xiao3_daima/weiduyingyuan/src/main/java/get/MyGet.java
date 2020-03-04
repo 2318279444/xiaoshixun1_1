@@ -7,7 +7,9 @@ import okhttp3.ResponseBody;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.HeaderMap;
 import retrofit2.http.POST;
+import retrofit2.http.QueryMap;
 import retrofit2.http.Url;
 
 /*
@@ -37,6 +39,23 @@ public interface MyGet {
 
     @GET
     Observable<ResponseBody> toBanner(@Url String url);
+
+
+    @GET
+    Observable<ResponseBody> toreCommendMove(@Url String url, @HeaderMap Map<String,Object> map, @QueryMap Map<String,Object> map1);
+
+
+    @GET
+    Observable<ResponseBody> toFujinMovie(@Url String url,@HeaderMap Map<String,Object> map,@QueryMap Map<String,Object> map1);
+
+    @GET
+    Observable<ResponseBody> toXqLeft(@Url String url,@HeaderMap Map<String,Object> map,@QueryMap Map<String,Object> map1);
+
+
+    @GET
+    Observable<ResponseBody> toPLRight(@Url String url,@HeaderMap Map<String,Object> map,@QueryMap Map<String,Object> map1);
+
+
 
 
 }

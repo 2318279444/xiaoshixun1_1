@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +37,16 @@ public class ShouYe extends BaseFragment {
 
     @Override
     protected void inidata(Bundle savedInstanceState) {
+        //轮播
+        inibanner();
+        Bundle arguments = getArguments();
+        String sessionId = arguments.getString("sessionId");
+        Log.e("aaa","shouye:sessionId:"+sessionId);
+
+
+    }
+
+    private void inibanner() {
         NetUtil.getInstance().NetBanner(MyUrl.BASEBANNER, BannerBean.class, new Icontract.ToBannerCall() {
             @Override
             public void seccess(Object o) {

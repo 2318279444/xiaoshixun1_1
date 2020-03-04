@@ -48,7 +48,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="33dp"
-                android:id="@+id/yingSousuo"
+                android:id="@+id/yingedit"
                 android:background="@drawable/yingyuansousuo"
                 android:hint="请输入影院名称"
                 />
@@ -62,7 +62,11 @@
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        app:tabGravity="fill"
         android:background="#4C74F0"
+        app:tabTextColor="#585858"
+        app:tabSelectedTextColor="#000000"
+        app:tabTextAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:layout_weight="0.8"
         android:id="@+id/tab"/>
 

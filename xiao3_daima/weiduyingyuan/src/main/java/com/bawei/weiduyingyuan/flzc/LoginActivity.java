@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import base.BaseActivity;
-import bean.DengLuBean;
+import bean.LoginRegist.DengLuBean;
 import contract.Icontract;
 import encryption.EncryptUtil;
 import url.MyUrl;
@@ -78,7 +78,8 @@ public class LoginActivity extends BaseActivity {
 
         boolean zidongb = sp.getBoolean("zidong", false);
         if(zidongb){
-            startActivity(new Intent(LoginActivity.this,MainActivity.class));
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
             finish();
         }
 
@@ -151,6 +152,7 @@ public class LoginActivity extends BaseActivity {
                     public void success(String stra) {
                         Gson gson = new Gson();
                         DengLuBean dengLuBean = gson.fromJson(stra, DengLuBean.class);
+                        String sessionId = dengLuBean.getResult().getSessionId();
                         String status = dengLuBean.getStatus();
                         if(status.equals("0000")){
 
@@ -166,7 +168,9 @@ public class LoginActivity extends BaseActivity {
                             boolean commit = edit.commit();
 
                             if(commit){
-                                startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                intent.putExtra("sessionId",sessionId);
+                                startActivity(intent);
                                 finish();
                             }else {
                                 Toast.makeText(LoginActivity.this,"登陆失败",Toast.LENGTH_LONG).show();
@@ -175,6 +179,7 @@ public class LoginActivity extends BaseActivity {
 
 
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            intent.putExtra("sessionId",sessionId);
                             startActivity(intent);
                             Toast.makeText(LoginActivity.this, dengLuBean.getMessage(), Toast.LENGTH_SHORT).show();
                         }else {

@@ -3,6 +3,7 @@ package com.bawei.weiduyingyuan.YingFragment;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.bawei.weiduyingyuan.R;
@@ -15,7 +16,9 @@ public class YingAction extends BaseFragment {
 
     @Override
     protected void inidata(Bundle savedInstanceState) {
-
+        Bundle arguments = getArguments();
+        String sessionId = arguments.getString("sessionId");
+        Log.e("aaa","yingaction:sessionId:"+sessionId);
     }
 
     @Override
