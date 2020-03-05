@@ -151,7 +151,7 @@ public class NetUtil {
                 });
     }
 
-    public void NetPLRight(String url,Class cls,Map<String,Object> map,Map<String,Object> map1,Icontract.ToCall toCall){
+       public void NetPLRight(String url,Class cls,Map<String,Object> map,Map<String,Object> map1,Icontract.ToCall toCall){
         myGet.toPLRight(url, map,map1).observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(new Consumer<ResponseBody>() {
@@ -163,6 +163,29 @@ public class NetUtil {
     }
 
 
+
+
+    public void Net_Location_Left(String url,Class cls,Icontract.ToCall toCall){
+        myGet.toLocation_Left(url).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Consumer<ResponseBody>() {
+                    @Override
+                    public void accept(ResponseBody responseBody) throws Exception {
+                        toCall.success(responseBody.string());
+                    }
+                });
+    }
+
+    public void NetLocation_Right(String url,Class cls,Map<String,Object> map,Icontract.ToCall toCall){
+        myGet.toLocation_Right(url,map).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Consumer<ResponseBody>() {
+                    @Override
+                    public void accept(ResponseBody responseBody) throws Exception {
+                        toCall.success(responseBody.string());
+                    }
+                });
+    }
 
 
 }

@@ -22,4 +22,9 @@
         android:text="登陆/注册"
         android:id="@+id/dz"/>
 
+    <com.bawei.rikaoday1_02_21.AddLocation
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
 </LinearLayout>

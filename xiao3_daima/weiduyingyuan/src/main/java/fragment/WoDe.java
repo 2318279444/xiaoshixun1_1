@@ -1,22 +1,19 @@
 package fragment;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.bawei.weiduyingyuan.R;
+import com.bawei.weiduyingyuan.wo_fragment.Wode_xxi;
 
 import base.BaseFragment;
 import base.BasePresenter;
 
 public class WoDe extends BaseFragment {
+    ImageView imageView;
 
 
     @Override
@@ -24,10 +21,30 @@ public class WoDe extends BaseFragment {
         Bundle arguments = getArguments();
         String sessionId = arguments.getString("sessionId");
         Log.e("aaa","wode:sessionId:"+sessionId);
+
+        //信息跳转
+        inixxi();
+
+
     }
+
+
 
     @Override
     protected void iniview(View view) {
+        imageView=getActivity().findViewById(R.id.wode_xinxi_ima);
+
+    }
+
+
+    private void inixxi() {
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Wode_xxi.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

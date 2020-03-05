@@ -59,6 +59,25 @@ public class Mymodel {
     }
 
 
+    public void m_Location_Left(String url,Class cls,Icontract.ToCall toCall){
+        NetUtil.getInstance().Net_Location_Left(url, cls, new Icontract.ToCall() {
+            @Override
+            public void success(String stra) {
+                toCall.success(stra);
+            }
+        });
+    }
+
+    public void mLocation_Right(String url,Class cls,Map<String,Object> map,Icontract.ToCall toCall){
+        NetUtil.getInstance().NetLocation_Right(url, cls, map, new Icontract.ToCall() {
+            @Override
+            public void success(String stra) {
+                toCall.success(stra);
+            }
+        });
+    }
+
+
 
 
 }

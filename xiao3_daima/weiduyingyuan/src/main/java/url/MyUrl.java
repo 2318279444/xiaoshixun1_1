@@ -25,4 +25,9 @@ public interface MyUrl {
     String BASEYING_XQ_LEFT="movieApi/cinema/v1/findCinemaInfo";
 
     String BASEYING_PL_RIGHT="movieApi/cinema/v1/findAllCinemaComment";
+
+    String BASE_Location_left="movieApi/tool/v2/findRegionList";
+
+
+    String BASE_Location_Right="movieApi/cinema/v2/findCinemaByRegion";
 }

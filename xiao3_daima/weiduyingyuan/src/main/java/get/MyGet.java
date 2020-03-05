@@ -56,6 +56,11 @@ public interface MyGet {
     Observable<ResponseBody> toPLRight(@Url String url,@HeaderMap Map<String,Object> map,@QueryMap Map<String,Object> map1);
 
 
+    @GET
+    Observable<ResponseBody> toLocation_Left(@Url String url);
+
+    @GET
+    Observable<ResponseBody> toLocation_Right(@Url String url,@QueryMap Map<String,Object> map);
 
 
 }

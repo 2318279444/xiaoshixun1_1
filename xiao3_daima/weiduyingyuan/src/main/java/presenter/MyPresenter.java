@@ -1,5 +1,6 @@
 package presenter;
 
+import com.bawei.weiduyingyuan.YingFragment.YingAction;
 import com.bawei.weiduyingyuan.YingFragment.YingFuJin;
 import com.bawei.weiduyingyuan.YingFragment.YingTuiJian;
 import com.bawei.weiduyingyuan.yingyuan.YingXiangqingFragment.MovieElaFragment;
@@ -72,6 +73,21 @@ public class MyPresenter extends BasePresenter {
             }
         });
     }
+
+
+    public void p_Location_Left(String url,Class cls){
+        mymodel.m_Location_Left(url, cls, new Icontract.ToCall() {
+            @Override
+            public void success(String stra) {
+                YingAction yingAction= (YingAction) v;
+                yingAction.success(stra);
+            }
+        });
+    }
+
+
+
+
 
 
 
