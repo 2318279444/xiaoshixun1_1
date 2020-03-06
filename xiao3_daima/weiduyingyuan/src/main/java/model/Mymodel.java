@@ -78,6 +78,27 @@ public class Mymodel {
     }
 
 
+    public void mShoyeMovie(String url,Class cls,Map<String,Object> map,Icontract.ToCall toCall){
+        NetUtil.getInstance().Net_Shouye_Movie(url, cls, map, new Icontract.ToCall() {
+            @Override
+            public void success(String stra) {
+                toCall.success(stra);
+            }
+        });
+    }
+
+
+
+    public void mRemenMovie(String url,Class cls,Map<String,Object> map,Icontract.ToCall toCall){
+        NetUtil.getInstance().Net_Remen_Movie(url, cls, map, new Icontract.ToCall() {
+            @Override
+            public void success(String stra) {
+                toCall.success(stra);
+            }
+        });
+    }
+
+
 
 
 }

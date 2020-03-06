@@ -1,21 +1,16 @@
 package com.bawei.rikaoday1_02_21.fragment;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bawei.rikaoday1_02_21.DengCe;
 import com.bawei.rikaoday1_02_21.R;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestOptions;
 
 import base.BaseFragment;
 import base.BasePresenter;
@@ -32,10 +27,14 @@ public class WoDe extends BaseFragment {
         //实例化头像信息
         String headPic = arguments.getString("headPic");
 
-        //使用Glide展示头像
-        Glide.with(getActivity()).load(headPic).into(imageView);
+        //使用Glide展示头像,并且实现圆形图片
+
+        Glide.with(getActivity()).load(headPic)
+                .apply(RequestOptions.bitmapTransform(new RoundedCorners(300)))
+                .into(imageView);
 
 
+        //点击跳到登陆页面
         dz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

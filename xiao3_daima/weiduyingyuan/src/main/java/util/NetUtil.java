@@ -188,4 +188,28 @@ public class NetUtil {
     }
 
 
+    public void Net_Shouye_Movie(String url,Class cls,Map<String,Object> map,Icontract.ToCall toCall){
+        myGet.toShouyeMoview(url,map).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Consumer<ResponseBody>() {
+                    @Override
+                    public void accept(ResponseBody responseBody) throws Exception {
+                        toCall.success(responseBody.string());
+                    }
+                });
+    }
+
+
+    public void Net_Remen_Movie(String url,Class cls,Map<String,Object> map,Icontract.ToCall toCall){
+        myGet.toRemenMoview(url,map).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Consumer<ResponseBody>() {
+                    @Override
+                    public void accept(ResponseBody responseBody) throws Exception {
+                        toCall.success(responseBody.string());
+                    }
+                });
+    }
+
+
 }

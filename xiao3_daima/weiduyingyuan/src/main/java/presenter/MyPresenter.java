@@ -3,6 +3,7 @@ package presenter;
 import com.bawei.weiduyingyuan.YingFragment.YingAction;
 import com.bawei.weiduyingyuan.YingFragment.YingFuJin;
 import com.bawei.weiduyingyuan.YingFragment.YingTuiJian;
+import com.bawei.weiduyingyuan.shouye_fragment.Remen_Movie_Shouye;
 import com.bawei.weiduyingyuan.yingyuan.YingXiangqingFragment.MovieElaFragment;
 import com.bawei.weiduyingyuan.yingyuan.YingXiangqingFragment.MovieXQFragment;
 
@@ -10,6 +11,7 @@ import java.util.Map;
 
 import base.BasePresenter;
 import contract.Icontract;
+import fragment.ShouYe;
 import model.Mymodel;
 
 /*
@@ -85,6 +87,28 @@ public class MyPresenter extends BasePresenter {
         });
     }
 
+
+    public void pShouyeMoview(String url,Class cls,Map<String,Object> map){
+        mymodel.mShoyeMovie(url, cls, map, new Icontract.ToCall() {
+            @Override
+            public void success(String stra) {
+                ShouYe shouYe= (ShouYe) v;
+                shouYe.success(stra);
+            }
+        });
+    }
+
+
+
+    public void pRemenMovie(String url,Class cls,Map<String,Object> map){
+        mymodel.mRemenMovie(url, cls, map, new Icontract.ToCall() {
+            @Override
+            public void success(String stra) {
+                Remen_Movie_Shouye remen_movie_shouye= (Remen_Movie_Shouye) v;
+                remen_movie_shouye.success(stra);
+            }
+        });
+    }
 
 
 

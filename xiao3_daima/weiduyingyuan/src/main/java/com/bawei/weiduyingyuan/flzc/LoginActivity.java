@@ -31,7 +31,11 @@ public class LoginActivity extends BaseActivity {
     CheckBox jizhu,zidong;
     EditText user,pwd;
     SharedPreferences sp;
-
+    private String headPic;
+    private String nickName;
+    private String sex;
+    private String cstime;
+    private String email;
 
 
     @Override
@@ -153,6 +157,16 @@ public class LoginActivity extends BaseActivity {
                         Gson gson = new Gson();
                         DengLuBean dengLuBean = gson.fromJson(stra, DengLuBean.class);
                         String sessionId = dengLuBean.getResult().getSessionId();
+                        //个人信息
+                        headPic = dengLuBean.getResult().getUserInfo().getHeadPic();
+                        nickName = dengLuBean.getResult().getUserInfo().getNickName();
+                        int sexx = dengLuBean.getResult().getUserInfo().getSex();
+                        sex = String.valueOf(sexx);
+                        long lastLoginTime = dengLuBean.getResult().getUserInfo().getLastLoginTime();
+                        cstime = String.valueOf(lastLoginTime);
+                        email = dengLuBean.getResult().getUserInfo().getEmail();
+
+
                         String status = dengLuBean.getStatus();
                         if(status.equals("0000")){
 
@@ -180,6 +194,13 @@ public class LoginActivity extends BaseActivity {
 
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             intent.putExtra("sessionId",sessionId);
+
+                            intent.putExtra("headPic",headPic);
+                            intent.putExtra("nickName",nickName);
+                            intent.putExtra("sex",sex);
+                            intent.putExtra("cstime",cstime);
+                            intent.putExtra("email",email);
+
                             startActivity(intent);
                             Toast.makeText(LoginActivity.this, dengLuBean.getMessage(), Toast.LENGTH_SHORT).show();
                         }else {

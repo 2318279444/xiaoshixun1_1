@@ -62,5 +62,13 @@ public interface MyGet {
     @GET
     Observable<ResponseBody> toLocation_Right(@Url String url,@QueryMap Map<String,Object> map);
 
+    @GET
+    Observable<ResponseBody> toShouyeMoview(@Url String url,@QueryMap Map<String,Object> map);
+
+    @GET
+    Observable<ResponseBody> toRemenMoview(@Url String url,@QueryMap Map<String,Object> map);
+
+
+
 
 }

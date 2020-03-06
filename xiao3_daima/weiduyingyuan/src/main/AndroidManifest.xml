@@ -11,7 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".wo_fragment.Wode_xxi"></activity>
+        <activity android:name=".shouye_fragment.Remen_Movie_Shouye"></activity>
+        <activity android:name=".shouye_fragment.Jijiang_Movie_Shouye" />
+        <activity android:name=".shouye_fragment.Now_Movie_Shouye" />
+        <activity android:name=".shouye_fragment.ShouyeFragment" />
+        <activity android:name=".Person_Xinxi" />
+        <activity android:name=".wo_fragment.Wode_xxi" />
         <activity android:name=".yingyuan.YingXiangqingFragment.MovieElaFragment" />
         <activity android:name=".yingyuan.YingXiangqingFragment.MovieXQFragment" />
         <activity android:name=".yingyuan.YingTuiJianXiangqing" />

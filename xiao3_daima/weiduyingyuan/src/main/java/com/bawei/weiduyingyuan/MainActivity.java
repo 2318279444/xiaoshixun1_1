@@ -1,15 +1,15 @@
 package com.bawei.weiduyingyuan;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.RadioGroup;
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.widget.RadioGroup;
 
 import fragment.ShouYe;
 import fragment.WoDe;
@@ -22,6 +22,11 @@ public class MainActivity extends AppCompatActivity {
     private ShouYe shouYe;
     private YingYuan yingYuan;
     private WoDe woDe;
+    private String headPic;
+    private String nickName;
+    private String sex;
+    private String cstime;
+    private String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +39,22 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String sessionId = intent.getStringExtra("sessionId");
+
+        headPic = intent.getStringExtra("headPic");
+        nickName = intent.getStringExtra("nickName");
+        sex = intent.getStringExtra("sex");
+        cstime = intent.getStringExtra("cstime");
+        email = intent.getStringExtra("email");
+
+
         Bundle bundle = new Bundle();
         bundle.putString("sessionId",sessionId);
+        bundle.putString("headPic",headPic);
+        bundle.putString("nickName",nickName);
+        bundle.putString("sex",sex);
+        bundle.putString("cstime",cstime);
+        bundle.putString("email",email);
+
 
         Log.e("aaa","main:sessionId:"+sessionId);
         shouYe = new ShouYe();

@@ -30,4 +30,8 @@ public interface MyUrl {
 
 
     String BASE_Location_Right="movieApi/cinema/v2/findCinemaByRegion";
+
+    String BASE_ZhengZai_Shangying="movieApi/movie/v2/findReleaseMovieList";
+
+    String BASE_Remen_Movie="movieApi/movie/v2/findHotMovieList";
 }

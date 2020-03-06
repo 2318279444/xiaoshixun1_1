@@ -1,16 +1,12 @@
 package com.bawei.rikaoday1_02_21;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.bawei.rikaoday1_02_21.fragment.WoDe;
 import com.blankj.utilcode.util.EncryptUtils;
 import com.google.gson.Gson;
 
@@ -18,8 +14,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import base.BaseActivity;
-import base.BaseFragment;
-import base.BasePresenter;
 import bean.DengLuBean;
 import bean.ZhuCeBean;
 import contract.Icontract;
@@ -34,17 +28,21 @@ public class DengCe extends BaseActivity {
 
     @Override
     protected void inidata() {
+        //注册登录相关代码
         zhuce.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //获取输入的账号和密码信息
                 String suser = user.getText().toString().trim();
                 String spwd = pwd.getText().toString().trim();
                 Map<String,Object> map=new HashMap<>();
+                //闯到接口的入参
                 map.put("phone",suser);
                 map.put("pwd",spwd);
                 NetUtil.getInstance().NetZhuce(MyUrl.BASEZHUCE, ZhuCeBean.class, map, new Icontract.ToCall() {
                     @Override
                     public void success(String stra) {
+                        //解析获取状态吗以及头像信息
                         Gson gson = new Gson();
                         ZhuCeBean zhuCeBean = gson.fromJson(stra, ZhuCeBean.class);
                         String status = zhuCeBean.getStatus();
@@ -81,6 +79,7 @@ public class DengCe extends BaseActivity {
                         String headPic = dengLuBean.getResult().getHeadPic();
                         String status = dengLuBean.getStatus();
                         if(status.equals("0000")){
+                            //判断如果是0000则登陆成功并且跳到主页面,反之登陆失败
                             Intent intent = new Intent(DengCe.this,MainActivity.class);
                             intent.putExtra("headPic",headPic);
                             startActivity(intent);

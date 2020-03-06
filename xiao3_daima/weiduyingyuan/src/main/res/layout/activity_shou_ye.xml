@@ -3,15 +3,52 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#3BC8F5"
+    android:background="#2A427A"
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context="fragment.ShouYe">
 
     <com.youth.banner.Banner
         android:layout_width="match_parent"
-        android:layout_height="266dp"
+        android:layout_height="200dp"
         android:id="@+id/banner"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/Shouye_remore"
+        android:background="#072346">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/reima"
+            android:background="@drawable/ry"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:text="正在热映"
+            android:textColor="#fff"
+            android:layout_toRightOf="@+id/reima"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="433dp"
+            android:layout_marginTop="10dp"
+            android:text="更多"
+            android:textColor="#fff"
+            android:layout_toRightOf="@+id/reima"/>
+
+    </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

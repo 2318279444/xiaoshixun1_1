@@ -31,6 +31,36 @@
 
 
     </RelativeLayout>
+    
+    
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:id="@+id/pexinxi"
+        android:background="#1D1E5A"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        >
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:id="@+id/imahea_wode"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="123"
+            android:layout_marginTop="50dp"
+            android:textColor="#fff"
+            android:textSize="33dp"
+            android:id="@+id/text_wode"/>
+
+
+    </LinearLayout>
+    
+    
+    
 
     <Button
         android:layout_marginTop="15dp"
@@ -45,8 +75,9 @@
 
 
     <LinearLayout
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal"
+        android:background="#1D1E5A"
         android:layout_width="match_parent"
         android:layout_height="100dp">
 
@@ -138,11 +169,163 @@
         </LinearLayout>
 
 
+    </LinearLayout>
 
+
+
+
+
+
+
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:background="#1D1E5A"
+        android:layout_height="100dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginLeft="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_marginLeft="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/kanguo"
+                    android:id="@+id/wode_kanguomoview"/>
+                <TextView
+                    android:layout_below="@+id/wode_guanzhu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:textSize="22dp"
+                    android:text="我的关注"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_marginLeft="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/mypinglun"
+                    android:id="@+id/wode_pnglun"/>
+                <TextView
+                    android:layout_below="@+id/wode_guanzhu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:textSize="22dp"
+                    android:text="我的预约"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginLeft="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_marginLeft="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/yijianfankui"
+                    android:id="@+id/wode_yijianfankui"/>
+                <TextView
+                    android:layout_below="@+id/wode_guanzhu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:textSize="22dp"
+                    android:text="购票记录"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+    <LinearLayout
+        android:background="#1D1E5A"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginLeft="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_marginLeft="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shezhi"
+                    android:id="@+id/wode_shezhi"/>
+                <TextView
+                    android:layout_below="@+id/wode_guanzhu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:textSize="22dp"
+                    android:text="我的关注"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
 
 
     </LinearLayout>
+
+
+
 
 
 </LinearLayout>

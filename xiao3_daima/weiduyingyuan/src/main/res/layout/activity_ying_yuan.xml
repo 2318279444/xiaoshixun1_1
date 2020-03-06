@@ -64,7 +64,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:tabGravity="fill"
-        android:background="#79B8FF"
+        android:background="#2F4863"
         app:tabTextColor="#585858"
         app:tabSelectedTextColor="#000000"
         app:tabTextAppearance="@style/Base.TextAppearance.AppCompat.Large"
