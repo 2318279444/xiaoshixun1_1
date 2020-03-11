@@ -11,7 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".shouye_fragment.Remen_Movie_Shouye"></activity>
+        <activity android:name=".ShouYe_Goupiao"></activity>
+        <activity android:name=".shouye_fragment.shouye_jsyp.Shouye_MX_YingPin" />
+        <activity android:name=".shouye_fragment.shouye_jsyp.Shouye_MX_JieShao" />
+        <activity android:name=".shouye_fragment.Shouye_Mx" />
+        <activity android:name=".shouye_fragment.Shouye_XQ" />
+        <activity android:name=".shouye_fragment.Remen_Movie_Shouye" />
         <activity android:name=".shouye_fragment.Jijiang_Movie_Shouye" />
         <activity android:name=".shouye_fragment.Now_Movie_Shouye" />
         <activity android:name=".shouye_fragment.ShouyeFragment" />

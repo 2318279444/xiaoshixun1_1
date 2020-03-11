@@ -99,6 +99,25 @@ public class Mymodel {
     }
 
 
+    public void mJijiangMovie(String url,Class cls,Map<String,Object> map,Map<String,Object> map1,Icontract.ToCall toCall){
+        NetUtil.getInstance().Net_Jijiang_Movie(url, cls, map,map1, new Icontract.ToCall() {
+            @Override
+            public void success(String stra) {
+                toCall.success(stra);
+            }
+        });
+    }
+
+    public void mShouye_Movie_XQ(String url,Class cls,Map<String,Object> map,Map<String,Object> map1,Icontract.ToCall toCall){
+        NetUtil.getInstance().Net_Shouye_Movie_XQ(url, cls, map,map1, new Icontract.ToCall() {
+            @Override
+            public void success(String stra) {
+                toCall.success(stra);
+            }
+        });
+    }
+
+
 
 
 }

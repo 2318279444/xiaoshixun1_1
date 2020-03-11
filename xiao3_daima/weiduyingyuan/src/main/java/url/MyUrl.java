@@ -34,4 +34,9 @@ public interface MyUrl {
     String BASE_ZhengZai_Shangying="movieApi/movie/v2/findReleaseMovieList";
 
     String BASE_Remen_Movie="movieApi/movie/v2/findHotMovieList";
+
+    String BASE_Jijiang_Movie="movieApi/movie/v2/findComingSoonMovieList";
+
+    String BASE_Shouye_Movie_XQ="movieApi/movie/v2/findMoviesDetail";
+
 }

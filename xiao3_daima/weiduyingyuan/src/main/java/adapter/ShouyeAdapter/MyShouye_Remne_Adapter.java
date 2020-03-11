@@ -50,6 +50,12 @@ public class MyShouye_Remne_Adapter extends RecyclerView.Adapter<MyShouye_Remne_
         holder.name.setText(list.get(position).getDirector());
         holder.yanyuan.setText(list.get(position).getStarring());
         holder.pf.setText(list.get(position).getScore()+"");
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toJijiangCall.onClick(position);
+            }
+        });
     }
 
     @Override
@@ -70,5 +76,15 @@ public class MyShouye_Remne_Adapter extends RecyclerView.Adapter<MyShouye_Remne_
             yanyuan=itemView.findViewById(R.id.Shouye_yanyuan);
             pf=itemView.findViewById(R.id.Shouye_pf);
         }
+    }
+
+    public interface ToJijiangCall{
+        void onClick(int position);
+    }
+
+    public MyShouye_jijiang_Adapter.ToJijiangCall toJijiangCall;
+
+    public void setToJijiangCall(MyShouye_jijiang_Adapter.ToJijiangCall toJijiangCall){
+        this.toJijiangCall=toJijiangCall;
     }
 }

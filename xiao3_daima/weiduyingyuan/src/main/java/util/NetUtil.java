@@ -212,4 +212,30 @@ public class NetUtil {
     }
 
 
+
+    public void Net_Jijiang_Movie(String url,Class cls,Map<String,Object> map,Map<String,Object> map1,Icontract.ToCall toCall){
+        myGet.toJijiang_Movie(url,map,map1).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Consumer<ResponseBody>() {
+                    @Override
+                    public void accept(ResponseBody responseBody) throws Exception {
+                        toCall.success(responseBody.string());
+                    }
+                });
+    }
+
+
+
+    public void Net_Shouye_Movie_XQ(String url,Class cls,Map<String,Object> map,Map<String,Object> map1,Icontract.ToCall toCall){
+        myGet.toShouye_Movie_XQ(url,map,map1).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Consumer<ResponseBody>() {
+                    @Override
+                    public void accept(ResponseBody responseBody) throws Exception {
+                        toCall.success(responseBody.string());
+                    }
+                });
+    }
+
+
 }

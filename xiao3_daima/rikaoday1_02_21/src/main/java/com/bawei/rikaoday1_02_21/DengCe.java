@@ -78,10 +78,13 @@ public class DengCe extends BaseActivity {
                         DengLuBean dengLuBean = gson.fromJson(stra, DengLuBean.class);
                         String headPic = dengLuBean.getResult().getHeadPic();
                         String status = dengLuBean.getStatus();
+                        String sessionId = dengLuBean.getResult().getSessionId();
                         if(status.equals("0000")){
                             //判断如果是0000则登陆成功并且跳到主页面,反之登陆失败
                             Intent intent = new Intent(DengCe.this,MainActivity.class);
                             intent.putExtra("headPic",headPic);
+                            intent.putExtra("sessionId",sessionId);
+
                             startActivity(intent);
                             Toast.makeText(DengCe.this, dengLuBean.getMessage(), Toast.LENGTH_SHORT).show();
                         }else {

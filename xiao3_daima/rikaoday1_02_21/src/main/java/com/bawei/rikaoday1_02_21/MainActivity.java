@@ -1,12 +1,12 @@
 package com.bawei.rikaoday1_02_21;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import com.bawei.rikaoday1_02_21.fragment.FaXian;
 import com.bawei.rikaoday1_02_21.fragment.ShoYe;
@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     List<String> slist=new ArrayList<>();
     List<Fragment> flist=new ArrayList<>();
     private WoDe woDe;
+    private FaXian faXian;
+    private String sessionId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,19 +42,32 @@ public class MainActivity extends AppCompatActivity {
         //传递到dragment里面
         Intent intent = getIntent();
         String headPic = intent.getStringExtra("headPic");
+        sessionId = intent.getStringExtra("sessionId");
         //打印传递到信息
         Log.e("aaa",""+headPic);
 
-        woDe = new WoDe();
+
+
         Bundle bundle = new Bundle();
         bundle.putString("headPic",headPic);
+        bundle.putString("sessionId",sessionId);
+
+
+        woDe = new WoDe();
         woDe.setArguments(bundle);
+
+
+        faXian = new FaXian();
+        faXian.setArguments(bundle);
+
+
+
 
 
 
         //添加fragment页面
         flist.add(new ShoYe());
-        flist.add(new FaXian());
+        flist.add(faXian);
         flist.add(woDe);
 
 

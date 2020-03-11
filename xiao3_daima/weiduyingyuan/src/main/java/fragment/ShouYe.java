@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bawei.weiduyingyuan.R;
 import com.bawei.weiduyingyuan.shouye_fragment.ShouyeFragment;
+import com.bawei.weiduyingyuan.shouye_fragment.Shouye_XQ;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.youth.banner.Banner;
@@ -24,6 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 import adapter.ShouyeAdapter.MyShouyeAdapter;
+import adapter.ShouyeAdapter.MyShouye_jijiang_Adapter;
 import base.BaseFragment;
 import base.BasePresenter;
 import bean.BannerBean;
@@ -36,16 +38,41 @@ import util.NetUtil;
 public class ShouYe extends BaseFragment implements Icontract.ToCall {
     Banner banner;
     List<String> list=new ArrayList<>();
+    List<String> listid=new ArrayList<>();
+
+
     RecyclerView recyclerView;
     RelativeLayout remore;
+    private String sessionId;
+    private String movieId;
+    private String listid1;
+    private List<BannerBean.ResultBean> result;
 
     @Override
     protected void inidata(Bundle savedInstanceState) {
+
+
+
         //轮播
         inibanner();
+
+
+//        for (int i = 0; i < 5; i++) {
+//            banner.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Intent intent = new Intent(getActivity(), Shouye_XQ.class);
+//                    intent.putExtra("movieId",23);
+//                    intent.putExtra("sessionId",sessionId);
+//                }
+//            });
+//        }
+
+
+
         Bundle arguments = getArguments();
-        String sessionId = arguments.getString("sessionId");
-        Log.e("aaa","shouye:sessionId:"+sessionId);
+        sessionId = arguments.getString("sessionId");
+        Log.e("aaa","shouye:sessionId:"+ sessionId);
 
 
         Map<String,Object> map=new HashMap<>();
@@ -59,6 +86,7 @@ public class ShouYe extends BaseFragment implements Icontract.ToCall {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), ShouyeFragment.class);
+                intent.putExtra("sessionId",sessionId);
                 startActivity(intent);
             }
         });
@@ -72,10 +100,19 @@ public class ShouYe extends BaseFragment implements Icontract.ToCall {
             @Override
             public void seccess(Object o) {
                 if(o instanceof BannerBean){
-                    List<BannerBean.ResultBean> result = ((BannerBean) o).getResult();
+                    result = ((BannerBean) o).getResult();
                     for (int i = 0; i < result.size(); i++) {
                         list.add(result.get(i).getImageUrl());
+                        listid1 = result.get(i).getJumpUrl().substring(19, 21);
+                        listid.add(listid1);
+
+
                     }
+                    Log.e("aaa","bannerid:"+listid);
+                    Log.e("aaa","bannerid:"+listid.get(1));
+
+
+
                 }
 
                 banner.setImageLoader(new ImageLoader() {
@@ -121,5 +158,22 @@ public class ShouYe extends BaseFragment implements Icontract.ToCall {
         ShouyeBean shouyeBean = gson.fromJson(stra, ShouyeBean.class);
         MyShouyeAdapter myShouyeAdapter = new MyShouyeAdapter(shouyeBean.getResult(), getActivity());
         recyclerView.setAdapter(myShouyeAdapter);
+
+        myShouyeAdapter.setToJijiangCall(new MyShouye_jijiang_Adapter.ToJijiangCall() {
+
+
+
+            @Override
+            public void onClick(int position) {
+                Intent intent = new Intent(getActivity(), Shouye_XQ.class);
+                int movie = shouyeBean.getResult().get(position).getMovieId();
+                movieId = String.valueOf(movie);
+                intent.putExtra("movieId", ShouYe.this.movieId);
+                Log.e("aaa","首页movieId:"+ ShouYe.this.movieId);
+                intent.putExtra("sessionId",sessionId);
+
+                startActivity(intent);
+            }
+        });
     }
 }

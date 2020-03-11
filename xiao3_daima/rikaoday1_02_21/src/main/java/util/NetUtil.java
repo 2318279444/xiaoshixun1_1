@@ -89,4 +89,16 @@ public class NetUtil {
                     }
                 });
     }
+
+    public void NetDD(String url, Class cls, Map<String,Object> map, Map<String,Object> map1, Icontract.ToCall toCall){
+        myGet.toDd(url, map,map1).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Consumer<ResponseBody>() {
+                    @Override
+                    public void accept(ResponseBody responseBody) throws Exception {
+                        toCall.success(responseBody.string());
+                    }
+                });
+    }
+
 }

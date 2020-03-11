@@ -57,6 +57,7 @@ public class ZhuCeZH extends BaseActivity  {
                 String syzm = putyzm.getText().toString().trim();
 
                 String encryptspwd = EncryptUtil.encrypt(spwd);
+
                 String encryptspwd1 = EncryptUtil.encrypt("d123456");
 
                 Log.e("aaa","密码d123456:"+encryptspwd1);

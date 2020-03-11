@@ -11,13 +11,13 @@
         android:layout_marginTop="100dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="请输入用户名"
+        android:text="18519653350"
         android:id="@+id/user"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="请输入密码"
+        android:text="a123456789"
         android:id="@+id/pwd"/>
 
     <Button

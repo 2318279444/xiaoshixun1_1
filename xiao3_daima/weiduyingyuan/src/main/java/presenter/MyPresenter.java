@@ -3,6 +3,7 @@ package presenter;
 import com.bawei.weiduyingyuan.YingFragment.YingAction;
 import com.bawei.weiduyingyuan.YingFragment.YingFuJin;
 import com.bawei.weiduyingyuan.YingFragment.YingTuiJian;
+import com.bawei.weiduyingyuan.shouye_fragment.Jijiang_Movie_Shouye;
 import com.bawei.weiduyingyuan.shouye_fragment.Remen_Movie_Shouye;
 import com.bawei.weiduyingyuan.yingyuan.YingXiangqingFragment.MovieElaFragment;
 import com.bawei.weiduyingyuan.yingyuan.YingXiangqingFragment.MovieXQFragment;
@@ -106,6 +107,27 @@ public class MyPresenter extends BasePresenter {
             public void success(String stra) {
                 Remen_Movie_Shouye remen_movie_shouye= (Remen_Movie_Shouye) v;
                 remen_movie_shouye.success(stra);
+            }
+        });
+    }
+
+
+    public void pJijiangMovie(String url,Class cls,Map<String,Object> map,Map<String,Object> map1){
+        mymodel.mJijiangMovie(url, cls, map,map1, new Icontract.ToCall() {
+            @Override
+            public void success(String stra) {
+                Jijiang_Movie_Shouye jijiang_movie_shouye= (Jijiang_Movie_Shouye) v;
+                jijiang_movie_shouye.success(stra);
+            }
+        });
+    }
+
+
+    public void pShouye_Movie_XQ(String url,Class cls,Map<String,Object> map,Map<String,Object> map1){
+        mymodel.mShouye_Movie_XQ(url, cls, map,map1, new Icontract.ToCall() {
+            @Override
+            public void success(String stra) {
+
             }
         });
     }

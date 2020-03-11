@@ -12,4 +12,6 @@ public interface MyUrl {
     String BASEZHUCE="user/v1/register";
 
     String BASESHOUYE="commodity/v1/commodityList";
+
+    String BASEDD="order/verify/v1/findOrderListByStatus";
 }
