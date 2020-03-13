@@ -209,7 +209,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#fff"
                     android:textSize="22dp"
-                    android:text="我的关注"/>
+                    android:text="看过的电影"/>
 
             </LinearLayout>
 
@@ -237,7 +237,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#fff"
                     android:textSize="22dp"
-                    android:text="我的预约"/>
+                    android:text="我的评论"/>
 
             </LinearLayout>
 
@@ -267,7 +267,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#fff"
                     android:textSize="22dp"
-                    android:text="购票记录"/>
+                    android:text="意见反馈"/>
 
             </LinearLayout>
 
@@ -314,7 +314,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#fff"
                     android:textSize="22dp"
-                    android:text="我的关注"/>
+                    android:text="设置"/>
 
             </LinearLayout>
 

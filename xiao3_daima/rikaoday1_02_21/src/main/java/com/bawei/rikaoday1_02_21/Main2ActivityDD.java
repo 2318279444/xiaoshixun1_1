@@ -55,6 +55,7 @@ public class Main2ActivityDD extends BaseActivity {
 
         Bundle bundle = new Bundle();
         bundle.putString("sessionId", sessionId);
+
         daiAll = new DaiAll();
         daiAll.setArguments(bundle);
 

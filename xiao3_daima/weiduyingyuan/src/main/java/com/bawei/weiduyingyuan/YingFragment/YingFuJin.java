@@ -1,12 +1,12 @@
 package com.bawei.weiduyingyuan.YingFragment;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bawei.weiduyingyuan.R;
 import com.bawei.weiduyingyuan.yingyuan.YingTuiJianXiangqing;
@@ -79,6 +79,8 @@ public class YingFuJin extends BaseFragment implements Icontract.ToCall {
                 String name = yingFujinBean.getResult().get(position).getName();
                 String address = yingFujinBean.getResult().get(position).getAddress();
                 int id = yingFujinBean.getResult().get(position).getId();
+                Log.e("aaa","影院id:"+id);
+
                 String yid= String.valueOf(id);
                 Intent intent = new Intent(getActivity(), YingTuiJianXiangqing.class);
                 intent.putExtra("name",name);

@@ -27,7 +27,7 @@ import util.NetUtil;
 
 public class LoginActivity extends BaseActivity {
     Button denglu;
-    TextView zhuce,tglogin;
+    TextView zhuce;
     CheckBox jizhu,zidong;
     EditText user,pwd;
     SharedPreferences sp;
@@ -51,23 +51,14 @@ public class LoginActivity extends BaseActivity {
         jizi();
 
 
-        //游客模式登录
-        initglogin();
+
 
 
 
 
     }
 
-    private void initglogin() {
-        tglogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                Toast.makeText(LoginActivity.this, "游客模式登录", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
+
 
     private void jizi() {
         sp=getSharedPreferences("", Context.MODE_PRIVATE);
@@ -113,7 +104,6 @@ public class LoginActivity extends BaseActivity {
         zhuce=findViewById(R.id.zhuce);
         jizhu=findViewById(R.id.jizhu);
         zidong=findViewById(R.id.zidong);
-        tglogin=findViewById(R.id.tgLogin);
     }
 
     @Override

@@ -13,7 +13,7 @@ import com.google.gson.Gson;
 import java.util.HashMap;
 import java.util.Map;
 
-import adapter.MyDDAdapter4;
+import adapter.adapterr.MyDDAdapter4;
 import base.BaseFragment;
 import base.BasePresenter;
 import bean.DdBean;

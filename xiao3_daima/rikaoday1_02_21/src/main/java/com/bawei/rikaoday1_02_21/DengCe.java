@@ -81,7 +81,7 @@ public class DengCe extends BaseActivity {
                         String sessionId = dengLuBean.getResult().getSessionId();
                         if(status.equals("0000")){
                             //判断如果是0000则登陆成功并且跳到主页面,反之登陆失败
-                            Intent intent = new Intent(DengCe.this,MainActivity.class);
+                            Intent intent = new Intent(DengCe.this,Main2ActivityDD.class);
                             intent.putExtra("headPic",headPic);
                             intent.putExtra("sessionId",sessionId);
 

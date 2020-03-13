@@ -88,14 +88,6 @@
 
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16dp"
-        android:layout_marginTop="33dp"
-        android:text="跳过登录"
-        android:textColor="#06BB00"
-        android:id="@+id/tgLogin"/>
 
 
 
