@@ -11,7 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShouYe_Goupiao"></activity>
+        <activity android:name=".ydy.ydy2"></activity>
+        <activity android:name=".ydy.ydy1" />
+        <activity android:name=".Activity_ydy">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".ShouYe_Goupiao" />
         <activity android:name=".shouye_fragment.shouye_jsyp.Shouye_MX_YingPin" />
         <activity android:name=".shouye_fragment.shouye_jsyp.Shouye_MX_JieShao" />
         <activity android:name=".shouye_fragment.Shouye_Mx" />
@@ -32,11 +42,7 @@
         <activity android:name=".NaviFragment" />
         <activity android:name=".flzc.ZhuCeZH" />
         <activity android:name=".flzc.LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name="fragment.WoDe" />
         <activity android:name="fragment.YingYuan" />
