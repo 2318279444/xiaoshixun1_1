@@ -7,6 +7,7 @@ import com.bawei.weiduyingyuan.shouye_fragment.Jijiang_Movie_Shouye;
 import com.bawei.weiduyingyuan.shouye_fragment.Remen_Movie_Shouye;
 import com.bawei.weiduyingyuan.yingyuan.YingXiangqingFragment.MovieElaFragment;
 import com.bawei.weiduyingyuan.yingyuan.YingXiangqingFragment.MovieXQFragment;
+import com.bawei.weiduyingyuan.yingyuan.paiq.Paiqi_one;
 
 import java.util.Map;
 
@@ -128,6 +129,18 @@ public class MyPresenter extends BasePresenter {
             @Override
             public void success(String stra) {
 
+            }
+        });
+    }
+
+
+
+    public void pYing_Paiqi(String url,Class cls,Map<String,Object> map){
+        mymodel.mYing_Paiqi(url, cls, map, new Icontract.ToCall() {
+            @Override
+            public void success(String stra) {
+                Paiqi_one paiqi_one= (Paiqi_one) v;
+                paiqi_one.success(stra);
             }
         });
     }

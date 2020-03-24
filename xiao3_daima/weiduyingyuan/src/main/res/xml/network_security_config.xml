@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network_security_config xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <base-config cleartextTrafficPermitted="true" /> //意思是允许开启http请求。
+
+<!--    <domain includeSubdomains="true">你的服务端接口地址</domain>-->
+
+</network_security_config>

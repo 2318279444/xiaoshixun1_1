@@ -77,5 +77,9 @@ public interface MyGet {
     Observable<ResponseBody> toShouye_Movie_XQ(@Url String url,@HeaderMap Map<String,Object> map,@QueryMap Map<String,Object> map1);
 
 
+    @GET
+    Observable<ResponseBody> to_YING_PAIQI(@Url String url,@QueryMap Map<String,Object> map);
+
+
 
 }

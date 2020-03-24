@@ -8,7 +8,7 @@
     tools:context="fragment.YingYuan">
 
     <LinearLayout
-        android:background="#100F2B"
+        android:background="#131038"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
@@ -64,9 +64,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:tabGravity="fill"
-        android:background="#2F4863"
-        app:tabTextColor="#585858"
-        app:tabSelectedTextColor="#000000"
+        android:background="#14183F"
+        app:tabTextColor="#D1D1D1"
+        app:tabSelectedTextColor="#fff"
         app:tabTextAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:layout_weight="0.8"
         android:id="@+id/tab"/>

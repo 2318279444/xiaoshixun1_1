@@ -8,10 +8,22 @@
         android:allowBackup="true"
         android:icon="@drawable/dyicon"
         android:label="维度影院"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ydy.ydy2"></activity>
+        <activity android:name=".Select_Seat"></activity>
+        <activity android:name=".yingyuan.paiq.Paiqi_seven" />
+        <activity android:name=".yingyuan.paiq.Paiqi_Six" />
+        <activity android:name=".yingyuan.paiq.Paiqi_five" />
+        <activity android:name=".yingyuan.paiq.Paiqi_four" />
+        <activity android:name=".yingyuan.paiq.Paiqi_three" />
+        <activity android:name=".yingyuan.paiq.Paiqi_two" />
+        <activity android:name=".yingyuan.paiq.Paiqi_one" />
+        <activity android:name=".Pinglun_Acitivity" />
+        <activity android:name=".yingyuan.paiq.Paiqi_Activity" />
+        <activity android:name=".Tz" />
+        <activity android:name=".ydy.ydy2" />
         <activity android:name=".ydy.ydy1" />
         <activity android:name=".Activity_ydy">
             <intent-filter>
@@ -19,7 +31,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".ShouYe_Goupiao" />
         <activity android:name=".shouye_fragment.shouye_jsyp.Shouye_MX_YingPin" />
@@ -41,9 +52,7 @@
         <activity android:name=".YingFragment.YingTuiJian" />
         <activity android:name=".NaviFragment" />
         <activity android:name=".flzc.ZhuCeZH" />
-        <activity android:name=".flzc.LoginActivity">
-
-        </activity>
+        <activity android:name=".flzc.LoginActivity" />
         <activity android:name="fragment.WoDe" />
         <activity android:name="fragment.YingYuan" />
         <activity android:name="fragment.ShouYe" />

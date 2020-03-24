@@ -1,12 +1,12 @@
 package com.bawei.weiduyingyuan.YingFragment;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bawei.weiduyingyuan.R;
 import com.bawei.weiduyingyuan.yingyuan.YingTuiJianXiangqing;

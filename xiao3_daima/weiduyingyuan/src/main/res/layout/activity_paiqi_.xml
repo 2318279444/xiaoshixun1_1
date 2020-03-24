@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#191E49"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".yingyuan.paiq.Paiqi_Activity">
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:text="电影排期"/>
+    </RelativeLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:tabTextColor="#DFDFDF"
+        app:tabSelectedTextColor="#FFFFFF"
+        app:tabTextAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        app:tabMode="scrollable"
+        android:layout_weight="1"
+        android:id="@+id/Paiqi_tab"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:id="@+id/Paiqi_Pager"/>
+
+</LinearLayout>

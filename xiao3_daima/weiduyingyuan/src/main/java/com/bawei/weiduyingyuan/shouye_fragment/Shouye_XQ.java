@@ -35,9 +35,13 @@ public class Shouye_XQ extends BaseActivity {
 
     Button redeyp,group;
     private String namemovie;
+    ImageView imageViewsc;
 
     @Override
     protected void inidata() {
+
+        //关注电影
+        iniima();
 
 
         group.setOnClickListener(new View.OnClickListener() {
@@ -109,8 +113,20 @@ public class Shouye_XQ extends BaseActivity {
 
     }
 
+    private void iniima() {
+        imageViewsc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                imageViewsc.setImageResource(R.drawable.sc);
+            }
+        });
+    }
+
     @Override
     protected void iniview() {
+        imageViewsc=findViewById(R.id.Shouye_XQ_sc);
+
 //        recyclerView=findViewById(R.id.recyc_Shouye_Movie_XQ);
 //        LinearLayoutManager manager=new LinearLayoutManager(this);
 //        manager.setOrientation(RecyclerView.VERTICAL);

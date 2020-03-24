@@ -39,4 +39,7 @@ public interface MyUrl {
 
     String BASE_Shouye_Movie_XQ="movieApi/movie/v2/findMoviesDetail";
 
+
+    String BASE_YING_PAIQI="movieApi/cinema/v2/findCinemaScheduleList";
+
 }

@@ -4,12 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0173FF"
     tools:context=".YingFragment.YingAction">
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="0dp"
-        android:background="#79B8FF"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:id="@+id/recyc_location_left"
@@ -17,7 +15,6 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="0dp"
-        android:background="#fff"
         android:layout_height="match_parent"
         android:layout_weight="4"
         android:id="@+id/recyc_location_right"

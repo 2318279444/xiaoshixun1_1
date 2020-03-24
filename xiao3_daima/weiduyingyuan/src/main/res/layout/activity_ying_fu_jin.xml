@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0CA7FA"
+    android:background="#162D50"
     tools:context=".YingFragment.YingFuJin">
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout

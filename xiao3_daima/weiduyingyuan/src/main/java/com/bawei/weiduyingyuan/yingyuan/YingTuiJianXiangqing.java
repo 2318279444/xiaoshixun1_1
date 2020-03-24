@@ -5,11 +5,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import com.bawei.weiduyingyuan.yingyuan.paiq.Paiqi_Activity;
+import com.bawei.weiduyingyuan.Pinglun_Acitivity;
 import com.bawei.weiduyingyuan.R;
 import com.bawei.weiduyingyuan.yingyuan.YingXiangqingFragment.MovieElaFragment;
 import com.bawei.weiduyingyuan.yingyuan.YingXiangqingFragment.MovieXQFragment;
@@ -25,6 +28,8 @@ public class YingTuiJianXiangqing extends BaseActivity {
     ImageView fanhui;
     TextView nameXQ;
 
+    RelativeLayout paiqi,plun;
+
     List<String> sl=new ArrayList<>();
     List<Fragment> fl=new ArrayList<>();
 
@@ -32,14 +37,33 @@ public class YingTuiJianXiangqing extends BaseActivity {
     ViewPager pager;
     private MovieXQFragment movieXQFragment;
     private MovieElaFragment movieElaFragment;
+    private String yyid;
 
     @Override
     protected void inidata() {
+
+        paiqi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(YingTuiJianXiangqing.this, Paiqi_Activity.class);
+                intent.putExtra("id",yyid);
+                startActivity(intent);
+            }
+        });
+
+        plun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(YingTuiJianXiangqing.this, Pinglun_Acitivity.class));
+            }
+        });
+
+
         //获取影院页面传过来的值
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
         String address = intent.getStringExtra("address");
-        String yyid = intent.getStringExtra("yid");
+        yyid = intent.getStringExtra("yid");
         String sessionId = intent.getStringExtra("sessionId");
         int yid= Integer.parseInt(yyid);
 
@@ -86,6 +110,9 @@ public class YingTuiJianXiangqing extends BaseActivity {
 
     @Override
     protected void iniview() {
+
+        paiqi=findViewById(R.id.Yingyuan_Paiqi);
+        plun=findViewById(R.id.Yingyuan_Pinglun);
 
         fanhui=findViewById(R.id.tuijianXQfanhui);
         nameXQ=findViewById(R.id.texttuijianXQ);

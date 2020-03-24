@@ -238,4 +238,17 @@ public class NetUtil {
     }
 
 
+
+    public void Net_Ying_Paiqi(String url,Class cls,Map<String,Object> map,Icontract.ToCall toCall){
+        myGet.to_YING_PAIQI(url,map).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Consumer<ResponseBody>() {
+                    @Override
+                    public void accept(ResponseBody responseBody) throws Exception {
+                        toCall.success(responseBody.string());
+                    }
+                });
+    }
+
+
 }

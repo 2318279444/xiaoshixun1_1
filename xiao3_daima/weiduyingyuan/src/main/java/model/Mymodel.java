@@ -118,6 +118,16 @@ public class Mymodel {
     }
 
 
+    public void mYing_Paiqi(String url,Class cls,Map<String,Object> map,Icontract.ToCall toCall){
+        NetUtil.getInstance().Net_Ying_Paiqi(url, cls, map, new Icontract.ToCall() {
+            @Override
+            public void success(String stra) {
+                toCall.success(stra);
+            }
+        });
+    }
+
+
 
 
 }
