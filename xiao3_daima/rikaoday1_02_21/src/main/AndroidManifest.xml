@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bawei.rikaoday1_02_21">
+    package="com.bw.rikaoday1_02_21">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,14 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Main2ActivityDD"></activity>
-        <activity android:name=".fragment.ddfragment.DaiFinish" />
-        <activity android:name=".fragment.ddfragment.Daipj" />
-        <activity android:name=".fragment.ddfragment.DaiShou" />
-        <activity android:name=".fragment.ddfragment.DaiFu" />
-        <activity android:name=".fragment.ddfragment.DaiAll" />
-        <activity android:name=".AddLocation" />
-        <activity android:name=".DengCe" >
+        <activity android:name="com.bw.rikaoday1_02_21.Main2ActivityDD"></activity>
+        <activity android:name="com.bw.rikaoday1_02_21.fragment.ddfragment.DaiFinish" />
+        <activity android:name="com.bw.rikaoday1_02_21.fragment.ddfragment.Daipj" />
+        <activity android:name="com.bw.rikaoday1_02_21.fragment.ddfragment.DaiShou" />
+        <activity android:name="com.bw.rikaoday1_02_21.fragment.ddfragment.DaiFu" />
+        <activity android:name="com.bw.rikaoday1_02_21.fragment.ddfragment.DaiAll" />
+        <activity android:name="com.bw.rikaoday1_02_21.AddLocation" />
+        <activity android:name="com.bw.rikaoday1_02_21.DengCe" >
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,10 +26,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".fragment.WoDe" />
-        <activity android:name=".fragment.FaXian" />
-        <activity android:name=".fragment.ShoYe" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.bw.rikaoday1_02_21.fragment.WoDe" />
+        <activity android:name="com.bw.rikaoday1_02_21.fragment.FaXian" />
+        <activity android:name="com.bw.rikaoday1_02_21.fragment.ShoYe" />
+        <activity android:name="com.bw.rikaoday1_02_21.MainActivity">
 
         </activity>
     </application>

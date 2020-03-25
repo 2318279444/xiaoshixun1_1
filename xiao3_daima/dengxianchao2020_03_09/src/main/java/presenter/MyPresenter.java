@@ -1,7 +1,7 @@
 package presenter;
 
-import com.bawei.dengxianchao2020_03_09.Hot;
-import com.bawei.dengxianchao2020_03_09.Now;
+import com.bw.dengxianchao2020_03_09.Hot;
+import com.bw.dengxianchao2020_03_09.Now;
 
 import java.util.Map;
 

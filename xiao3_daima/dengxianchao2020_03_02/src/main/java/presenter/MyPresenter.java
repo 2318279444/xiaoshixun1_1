@@ -1,6 +1,6 @@
 package presenter;
 
-import com.bawei.dengxianchao2020_03_02.ShopMianActivity;
+import com.bw.dengxianchao2020_03_02.ShopMianActivity;
 
 import base.BasePresenter;
 import contract.Icontract;

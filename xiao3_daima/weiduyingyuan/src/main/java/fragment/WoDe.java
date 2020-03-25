@@ -8,9 +8,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.bawei.weiduyingyuan.Person_Xinxi;
-import com.bawei.weiduyingyuan.R;
-import com.bawei.weiduyingyuan.wo_fragment.Wode_xxi;
+import com.bw.movie.Person_Xinxi;
+import com.bw.movie.R;
+import com.bw.movie.wo_fragment.Wode_xxi;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bawei.zhoumozuoye2020_2_29">
+    package="com.bw.zhoumozuoye2020_2_29">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,8 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Book"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name="com.bw.zhoumozuoye2020_2_29.Book"></activity>
+        <activity android:name="com.bw.zhoumozuoye2020_2_29.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

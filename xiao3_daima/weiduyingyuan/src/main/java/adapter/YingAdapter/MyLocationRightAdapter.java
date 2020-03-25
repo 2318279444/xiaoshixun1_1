@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bawei.weiduyingyuan.R;
+import com.bw.movie.R;
 
 import java.util.List;
 

@@ -1,13 +1,13 @@
 package presenter;
 
-import com.bawei.weiduyingyuan.YingFragment.YingAction;
-import com.bawei.weiduyingyuan.YingFragment.YingFuJin;
-import com.bawei.weiduyingyuan.YingFragment.YingTuiJian;
-import com.bawei.weiduyingyuan.shouye_fragment.Jijiang_Movie_Shouye;
-import com.bawei.weiduyingyuan.shouye_fragment.Remen_Movie_Shouye;
-import com.bawei.weiduyingyuan.yingyuan.YingXiangqingFragment.MovieElaFragment;
-import com.bawei.weiduyingyuan.yingyuan.YingXiangqingFragment.MovieXQFragment;
-import com.bawei.weiduyingyuan.yingyuan.paiq.Paiqi_one;
+import com.bw.movie.YingFragment.YingAction;
+import com.bw.movie.YingFragment.YingFuJin;
+import com.bw.movie.YingFragment.YingTuiJian;
+import com.bw.movie.shouye_fragment.Jijiang_Movie_Shouye;
+import com.bw.movie.shouye_fragment.Remen_Movie_Shouye;
+import com.bw.movie.yingyuan.YingXiangqingFragment.MovieElaFragment;
+import com.bw.movie.yingyuan.YingXiangqingFragment.MovieXQFragment;
+import com.bw.movie.yingyuan.paiq.Paiqi_one;
 
 import java.util.Map;
 

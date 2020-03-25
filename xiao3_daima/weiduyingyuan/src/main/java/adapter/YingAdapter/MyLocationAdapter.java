@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bawei.weiduyingyuan.R;
+import com.bw.movie.R;
 
 import java.util.List;
 
@@ -45,9 +45,9 @@ public class MyLocationAdapter extends RecyclerView.Adapter<MyLocationAdapter.Ho
         holder.textView.setTextSize(26);
 
         if(lposition==position){
-            holder.textView.setTextColor(Color.BLACK);
+            holder.textView.setTextColor(Color.YELLOW);
         }else {
-            holder.textView.setTextColor(Color.GRAY);
+            holder.textView.setTextColor(Color.WHITE);
         }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

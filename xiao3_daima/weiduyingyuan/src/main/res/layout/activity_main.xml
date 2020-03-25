@@ -73,7 +73,7 @@
     </LinearLayout>
 
     <FrameLayout
-        class="com.bawei.weiduyingyuan.NaviFragment"
+        class="com.bw.movie.NaviFragment"
         android:layout_width="366dp"
         android:layout_height="match_parent"
         android:background="#F7F7F7"

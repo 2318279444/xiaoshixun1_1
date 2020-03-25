@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bawei.zhoumozuoye_2020_03_07.R;
+import com.bw.zhoumozuoye_2020_03_07.R;
 
 import java.util.List;
 

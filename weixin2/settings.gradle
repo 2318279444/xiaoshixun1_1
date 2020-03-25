@@ -1,0 +1,2 @@
+include ':app', ':wx', ':movie'
+rootProject.name='weixin2'

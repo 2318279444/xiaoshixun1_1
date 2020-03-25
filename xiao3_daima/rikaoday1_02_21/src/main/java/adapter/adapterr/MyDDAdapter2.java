@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bawei.rikaoday1_02_21.R;
+import com.bw.rikaoday1_02_21.R;
 import com.bumptech.glide.Glide;
 
 import java.util.List;

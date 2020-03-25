@@ -12,8 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bawei.dengxianchao20200316.AddNet;
-import com.bawei.dengxianchao20200316.R;
+import com.bw.dengxianchao20200316.AddNet;
+import com.bw.dengxianchao20200316.R;
 import com.bumptech.glide.Glide;
 
 import java.util.List;

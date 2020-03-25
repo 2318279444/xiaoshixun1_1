@@ -27,7 +27,7 @@
 
     <!--DrawerLayout的侧拉菜单的界面-->
     <FrameLayout
-        class="com.bawei.cela.NaviFragment"
+        class="com.bw.cela.NaviFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#fcc"

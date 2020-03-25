@@ -8,52 +8,70 @@
     android:layout_height="match_parent"
     tools:context="fragment.ShouYe">
 
-    <com.youth.banner.Banner
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:id="@+id/banner"/>
+        android:layout_height="wrap_content">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/Shouye_remore"
-        android:background="#072346">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent"
+            >
+            <com.youth.banner.Banner
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:id="@+id/reima"
-            android:background="@drawable/ry"/>
+            <RelativeLayout
+                android:id="@+id/Shouye_remore"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#072346">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"
-            android:text="正在热映"
-            android:textColor="#fff"
-            android:layout_toRightOf="@+id/reima"/>
+                <ImageView
+                    android:id="@+id/reima"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/ry" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            android:layout_marginLeft="433dp"
-            android:layout_marginTop="10dp"
-            android:text="更多"
-            android:textColor="#fff"
-            android:layout_toRightOf="@+id/reima"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/reima"
+                    android:text="正在热映"
+                    android:textColor="#fff"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-    </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="433dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/reima"
+                    android:text="更多"
+                    android:textColor="#fff"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recycShouye"/>
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycShouye"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
 
 
 </LinearLayout>

@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bawei.frescotupian">
+    package="com.bw.frescotupian">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
-        android:name=".MyApp"
+        android:name="com.bw.frescotupian.MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FrescoAutoSizeActivity"></activity>
-        <activity android:name=".FrescoModifyActivity" />
-        <activity android:name=".FrescoResizeActivity" />
-        <activity android:name=".FrescoListenerActivity" />
-        <activity android:name=".FrescoMultiActivity" />
-        <activity android:name=".FrescoGifAcitivity" />
-        <activity android:name=".FrescoJpegActivity" />
-        <activity android:name=".FrescoCircleAndCornerActivity" />
-        <activity android:name=".FrescoCropActivity" />
-        <activity android:name=".FrescoSpimgActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.bw.frescotupian.FrescoAutoSizeActivity"></activity>
+        <activity android:name="com.bw.frescotupian.FrescoModifyActivity" />
+        <activity android:name="com.bw.frescotupian.FrescoResizeActivity" />
+        <activity android:name="com.bw.frescotupian.FrescoListenerActivity" />
+        <activity android:name="com.bw.frescotupian.FrescoMultiActivity" />
+        <activity android:name="com.bw.frescotupian.FrescoGifAcitivity" />
+        <activity android:name="com.bw.frescotupian.FrescoJpegActivity" />
+        <activity android:name="com.bw.frescotupian.FrescoCircleAndCornerActivity" />
+        <activity android:name="com.bw.frescotupian.FrescoCropActivity" />
+        <activity android:name="com.bw.frescotupian.FrescoSpimgActivity" />
+        <activity android:name="com.bw.frescotupian.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

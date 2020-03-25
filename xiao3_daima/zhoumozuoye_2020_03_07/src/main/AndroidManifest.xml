@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bawei.zhoumozuoye_2020_03_07">
+    package="com.bw.zhoumozuoye_2020_03_07">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
@@ -10,10 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Fragment.My_activity"></activity>
-        <activity android:name=".Fragment.Movie" />
-        <activity android:name=".Fragment.Shouye" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.bw.zhoumozuoye_2020_03_07.Fragment.My_activity"></activity>
+        <activity android:name="com.bw.zhoumozuoye_2020_03_07.Fragment.Movie" />
+        <activity android:name="com.bw.zhoumozuoye_2020_03_07.Fragment.Shouye" />
+        <activity android:name="com.bw.zhoumozuoye_2020_03_07.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

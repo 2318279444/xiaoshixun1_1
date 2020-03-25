@@ -1,7 +1,6 @@
 package adapter;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,13 +10,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bawei.zhoumozuoye2020_2_29.R;
+import com.bw.zhoumozuoye2020_2_29.R;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
 
 import bean.BookBean;
-import contract.Icontract;
 
 /*
  *@auther:邓先超

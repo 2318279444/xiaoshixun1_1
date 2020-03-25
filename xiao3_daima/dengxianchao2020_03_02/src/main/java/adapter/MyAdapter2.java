@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bawei.dengxianchao2020_03_02.R;
+import com.bw.dengxianchao2020_03_02.R;
 import com.bumptech.glide.Glide;
 
 import java.util.List;

@@ -37,7 +37,7 @@
             android:textSize="22dp"
             android:id="@+id/count"/>
 
-        <com.bawei.jiaqizuoye2020_03_14.Addnet
+        <com.bw.jiaqizuoye2020_03_14.Addnet
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/addne"/>

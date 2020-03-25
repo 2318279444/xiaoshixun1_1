@@ -71,7 +71,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:textSize="33dp"
-        android:id="@+id/weixin"
+        android:id="@+id/Shouye_weixin"
         android:drawableTop="@drawable/wxxx3"
         android:background="@drawable/buttonstyle_weixin"
         />

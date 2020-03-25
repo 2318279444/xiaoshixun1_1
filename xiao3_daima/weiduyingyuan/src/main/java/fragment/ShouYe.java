@@ -11,9 +11,9 @@ import android.widget.RelativeLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bawei.weiduyingyuan.R;
-import com.bawei.weiduyingyuan.shouye_fragment.ShouyeFragment;
-import com.bawei.weiduyingyuan.shouye_fragment.Shouye_XQ;
+import com.bw.movie.R;
+import com.bw.movie.shouye_fragment.ShouyeFragment;
+import com.bw.movie.shouye_fragment.Shouye_XQ;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.youth.banner.Banner;

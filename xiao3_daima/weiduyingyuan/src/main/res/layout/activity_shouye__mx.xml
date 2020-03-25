@@ -4,16 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:background="#161941"
     android:layout_height="match_parent"
     tools:context=".shouye_fragment.Shouye_Mx">
+
+
+
 
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#32378B"
+        android:background="#353B99"
         app:tabTextColor="#AAAAAA"
         app:tabSelectedTextColor="#FFFFFF"
+        app:tabTextAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:id="@+id/shouye_mx_tab"/>
 
     <androidx.viewpager.widget.ViewPager

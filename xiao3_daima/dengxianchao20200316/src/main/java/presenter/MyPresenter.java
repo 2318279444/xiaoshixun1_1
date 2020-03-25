@@ -1,7 +1,7 @@
 package presenter;
 
-import com.bawei.dengxianchao20200316.DengluMain;
-import com.bawei.dengxianchao20200316.ZhuceMain;
+import com.bw.dengxianchao20200316.DengluMain;
+import com.bw.dengxianchao20200316.ZhuceMain;
 
 import java.util.Map;
 

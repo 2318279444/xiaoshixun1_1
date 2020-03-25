@@ -1,26 +1,21 @@
 package fragment;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.bawei.weiduyingyuan.R;
-import com.bawei.weiduyingyuan.YingFragment.YingAction;
-import com.bawei.weiduyingyuan.YingFragment.YingFuJin;
-import com.bawei.weiduyingyuan.YingFragment.YingTuiJian;
-import com.bawei.weiduyingyuan.yingyuanjump.YingYuanSouSuo;
+import com.bw.movie.R;
+import com.bw.movie.YingFragment.YingAction;
+import com.bw.movie.YingFragment.YingFuJin;
+import com.bw.movie.YingFragment.YingTuiJian;
+import com.bw.movie.yingyuanjump.YingYuanSouSuo;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;

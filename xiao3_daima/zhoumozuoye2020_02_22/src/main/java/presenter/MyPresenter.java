@@ -1,7 +1,6 @@
 package presenter;
 
-import com.bawei.zhoumozuoye2020_02_22.JiJang;
-import com.bawei.zhoumozuoye2020_02_22.ZhengZai;
+import com.bw.zhoumozuoye2020_02_22.ZhengZai;
 
 import base.BasePresenter;
 import contract.Icontract;

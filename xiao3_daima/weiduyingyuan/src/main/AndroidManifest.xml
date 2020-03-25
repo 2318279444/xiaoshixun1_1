@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bawei.weiduyingyuan">
+    package="com.bw.movie">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name="com.bw.movie.flzc.wx.MyApp"
         android:allowBackup="true"
         android:icon="@drawable/dyicon"
         android:label="维度影院"
@@ -12,51 +13,56 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Select_Seat"></activity>
-        <activity android:name=".yingyuan.paiq.Paiqi_seven" />
-        <activity android:name=".yingyuan.paiq.Paiqi_Six" />
-        <activity android:name=".yingyuan.paiq.Paiqi_five" />
-        <activity android:name=".yingyuan.paiq.Paiqi_four" />
-        <activity android:name=".yingyuan.paiq.Paiqi_three" />
-        <activity android:name=".yingyuan.paiq.Paiqi_two" />
-        <activity android:name=".yingyuan.paiq.Paiqi_one" />
-        <activity android:name=".Pinglun_Acitivity" />
-        <activity android:name=".yingyuan.paiq.Paiqi_Activity" />
-        <activity android:name=".Tz" />
-        <activity android:name=".ydy.ydy2" />
-        <activity android:name=".ydy.ydy1" />
-        <activity android:name=".Activity_ydy">
+        <activity android:name="com.bw.movie.wxapi.WXEntryActivity" android:exported="true"></activity>
+        <activity android:name="com.bw.movie.shouye_fragment.shouye_paiqi.Shouye_Paiqi_price" />
+        <activity android:name="com.bw.movie.shouye_fragment.shouye_paiqi.Shouye_Paiqi_Week" />
+        <activity android:name="com.bw.movie.shouye_fragment.shouye_paiqi.Shouye_paiqi_Location" />
+        <activity android:name="com.bw.movie.Conments" />
+        <activity android:name="com.bw.movie.Select_Seat" />
+        <activity android:name="com.bw.movie.yingyuan.paiq.Paiqi_seven" />
+        <activity android:name="com.bw.movie.yingyuan.paiq.Paiqi_Six" />
+        <activity android:name="com.bw.movie.yingyuan.paiq.Paiqi_five" />
+        <activity android:name="com.bw.movie.yingyuan.paiq.Paiqi_four" />
+        <activity android:name="com.bw.movie.yingyuan.paiq.Paiqi_three" />
+        <activity android:name="com.bw.movie.yingyuan.paiq.Paiqi_two" />
+        <activity android:name="com.bw.movie.yingyuan.paiq.Paiqi_one" />
+        <activity android:name="com.bw.movie.Pinglun_Acitivity" />
+        <activity android:name="com.bw.movie.yingyuan.paiq.Paiqi_Activity" />
+        <activity android:name="com.bw.movie.Tz" />
+        <activity android:name="com.bw.movie.ydy.ydy2" />
+        <activity android:name="com.bw.movie.ydy.ydy1" />
+        <activity android:name="com.bw.movie.ydy.Activity_ydy" />
+        <activity android:name="com.bw.movie.ShouYe_Goupiao" />
+        <activity android:name="com.bw.movie.shouye_fragment.shouye_jsyp.Shouye_MX_YingPin" />
+        <activity android:name="com.bw.movie.shouye_fragment.shouye_jsyp.Shouye_MX_JieShao" />
+        <activity android:name="com.bw.movie.shouye_fragment.Shouye_Mx" />
+        <activity android:name="com.bw.movie.shouye_fragment.Shouye_XQ" />
+        <activity android:name="com.bw.movie.shouye_fragment.Remen_Movie_Shouye" />
+        <activity android:name="com.bw.movie.shouye_fragment.Jijiang_Movie_Shouye" />
+        <activity android:name="com.bw.movie.shouye_fragment.Now_Movie_Shouye" />
+        <activity android:name="com.bw.movie.shouye_fragment.ShouyeFragment" />
+        <activity android:name="com.bw.movie.Person_Xinxi" />
+        <activity android:name="com.bw.movie.wo_fragment.Wode_xxi" />
+        <activity android:name="com.bw.movie.yingyuan.YingXiangqingFragment.MovieElaFragment" />
+        <activity android:name="com.bw.movie.yingyuan.YingXiangqingFragment.MovieXQFragment" />
+        <activity android:name="com.bw.movie.yingyuan.YingTuiJianXiangqing" />
+        <activity android:name="com.bw.movie.yingyuanjump.YingYuanSouSuo" />
+        <activity android:name="com.bw.movie.YingFragment.YingAction" />
+        <activity android:name="com.bw.movie.YingFragment.YingFuJin" />
+        <activity android:name="com.bw.movie.YingFragment.YingTuiJian" />
+        <activity android:name="com.bw.movie.NaviFragment" />
+        <activity android:name="com.bw.movie.flzc.ZhuCeZH" />
+        <activity android:name="com.bw.movie.flzc.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ShouYe_Goupiao" />
-        <activity android:name=".shouye_fragment.shouye_jsyp.Shouye_MX_YingPin" />
-        <activity android:name=".shouye_fragment.shouye_jsyp.Shouye_MX_JieShao" />
-        <activity android:name=".shouye_fragment.Shouye_Mx" />
-        <activity android:name=".shouye_fragment.Shouye_XQ" />
-        <activity android:name=".shouye_fragment.Remen_Movie_Shouye" />
-        <activity android:name=".shouye_fragment.Jijiang_Movie_Shouye" />
-        <activity android:name=".shouye_fragment.Now_Movie_Shouye" />
-        <activity android:name=".shouye_fragment.ShouyeFragment" />
-        <activity android:name=".Person_Xinxi" />
-        <activity android:name=".wo_fragment.Wode_xxi" />
-        <activity android:name=".yingyuan.YingXiangqingFragment.MovieElaFragment" />
-        <activity android:name=".yingyuan.YingXiangqingFragment.MovieXQFragment" />
-        <activity android:name=".yingyuan.YingTuiJianXiangqing" />
-        <activity android:name=".yingyuanjump.YingYuanSouSuo" />
-        <activity android:name=".YingFragment.YingAction" />
-        <activity android:name=".YingFragment.YingFuJin" />
-        <activity android:name=".YingFragment.YingTuiJian" />
-        <activity android:name=".NaviFragment" />
-        <activity android:name=".flzc.ZhuCeZH" />
-        <activity android:name=".flzc.LoginActivity" />
         <activity android:name="fragment.WoDe" />
         <activity android:name="fragment.YingYuan" />
         <activity android:name="fragment.ShouYe" />
-        <activity android:name=".MainActivity" />
+        <activity android:name="com.bw.movie.MainActivity" />
     </application>
 
 </manifest>

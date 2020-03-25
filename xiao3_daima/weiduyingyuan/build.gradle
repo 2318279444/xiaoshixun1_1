@@ -5,6 +5,16 @@ android {
     buildToolsVersion "29.0.2"
 
 
+    signingConfigs { //在android代码块下写
+        debug {//这个地方可以写成 release
+            storeFile file('movie.keystore')
+            keyAlias "bw_movie"
+            storePassword "123456"
+            keyPassword "123456"
+        }
+    }
+
+
     defaultConfig {
         applicationId "com.bawei.weiduyingyuan"
         minSdkVersion 18
@@ -87,4 +97,8 @@ dependencies {
 
 
     implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+
+    //微信
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:1.0.2'
+
 }
