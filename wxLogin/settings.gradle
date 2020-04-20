@@ -1,0 +1,2 @@
+include ':app', ':movie', ':movie2'
+rootProject.name='wxLogin'

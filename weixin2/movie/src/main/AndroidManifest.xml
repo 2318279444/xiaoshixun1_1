@@ -3,24 +3,83 @@
     package="com.bw.movie">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".MyApp"
+        android:name=".flzc.wx.MyApp"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/dytb"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Tz"></activity>
-        <activity android:name=".wxapi.WXEntryActivity" android:exported="true"/>
-        <activity android:name=".MainActivity">
+        <activity android:name=".xuanzuozhifu"></activity>
+        <activity android:name=".my.My_Gp_erweima" />
+        <activity android:name=".my.My_shezhi" />
+        <activity android:name=".my.My_yijianfankui" />
+        <activity android:name=".my.My_pnglun" />
+        <activity android:name=".my.My_kanguomoview" />
+        <activity android:name=".my.My_goupiaojilu" />
+        <activity android:name=".my.My_yuyue" />
+        <activity android:name=".my.My_guanzhu" />
+        <activity android:name=".shouye_fragment.Shouye_Ss_Movie" />
+        <activity android:name=".shouye_fragment.shouye_jsyp.Shouye_Mx_Juzhao" />
+        <activity android:name=".shouye_fragment.shouye_jsyp.Shouye_Mx_Yugao" />
+        <activity android:name=".shouye_fragment.shouye_paiqi.Shouye_Paiqi_price" />
+        <activity android:name=".shouye_fragment.shouye_paiqi.Shouye_Paiqi_Week" />
+        <activity android:name=".shouye_fragment.shouye_paiqi.Shouye_paiqi_Location" />
+        <activity android:name=".Conments" />
+        <activity android:name=".Select_Seat" />
+        <activity android:name=".yingyuan.paiq.Paiqi_seven" />
+        <activity android:name=".yingyuan.paiq.Paiqi_Six" />
+        <activity android:name=".yingyuan.paiq.Paiqi_five" />
+        <activity android:name=".yingyuan.paiq.Paiqi_four" />
+        <activity android:name=".yingyuan.paiq.Paiqi_three" />
+        <activity android:name=".yingyuan.paiq.Paiqi_two" />
+        <activity android:name=".yingyuan.paiq.Paiqi_one" />
+        <activity android:name=".Pinglun_Acitivity" />
+        <activity android:name=".yingyuan.paiq.Paiqi_Activity" />
+        <activity android:name=".Tz" />
+        <activity android:name=".ydy.ydy2" />
+        <activity android:name=".ydy.ydy1" />
+        <activity android:name=".ydy.Activity_ydy" />
+        <activity android:name=".shouye_fragment.ShouYe_Goupiao" />
+        <activity android:name=".shouye_fragment.shouye_jsyp.Shouye_MX_YingPin" />
+        <activity android:name=".shouye_fragment.shouye_jsyp.Shouye_MX_JieShao" />
+        <activity android:name=".shouye_fragment.Shouye_Mx" />
+        <activity android:name=".shouye_fragment.Shouye_XQ" />
+        <activity android:name=".shouye_fragment.Remen_Movie_Shouye" />
+        <activity android:name=".shouye_fragment.Jijiang_Movie_Shouye" />
+        <activity android:name=".shouye_fragment.Now_Movie_Shouye" />
+        <activity android:name=".shouye_fragment.ShouyeFragment" />
+        <activity android:name=".Person_Xinxi" />
+        <activity android:name=".wo_fragment.Wode_xxi" />
+        <activity android:name=".yingyuan.YingXiangqingFragment.MovieElaFragment" />
+        <activity android:name=".yingyuan.YingXiangqingFragment.MovieXQFragment" />
+        <activity android:name=".yingyuan.YingTuiJianXiangqing" />
+        <activity android:name=".yingyuanjump.YingYuanSouSuo" />
+        <activity android:name=".YingFragment.YingAction" />
+        <activity android:name=".YingFragment.YingFuJin" />
+        <activity android:name=".YingFragment.YingTuiJian" />
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true" />
+        <activity android:name=".NaviFragment" />
+        <activity android:name=".flzc.ZhuCeZH" />
+        <activity android:name=".flzc.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="fragment.WoDe" />
+        <activity android:name="fragment.YingYuan" />
+        <activity android:name="fragment.ShouYe" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

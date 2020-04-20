@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/beijing"
+    tools:context=".flzc.ZhuCeZH">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:text="注册"
+        android:textSize="39dp"/>
+
+    <EditText
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"
+        android:background="@drawable/edraduis"
+        android:layout_width="350dp"
+        android:textStyle="bold"
+        android:textColorHint="#fff"
+        android:id="@+id/putname"
+        android:layout_height="wrap_content"
+        android:hint="请输入昵称"/>
+    <EditText
+        android:layout_marginTop="22dp"
+
+        android:layout_gravity="center"
+        android:background="@drawable/edraduis"
+        android:layout_width="350dp"
+        android:textColorHint="#fff"
+        android:textStyle="bold"
+        android:id="@+id/putemail"
+        android:layout_height="wrap_content"
+        android:hint="请输入邮箱账号"/>
+
+    <EditText
+        android:layout_marginTop="22dp"
+        android:layout_gravity="center"
+        android:textColorHint="#fff"
+        android:background="@drawable/edraduis"
+        android:layout_width="350dp"
+        android:textStyle="bold"
+        android:id="@+id/putpwd"
+        android:layout_height="wrap_content"
+        android:hint="请输入密码"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textColorHint="#fff"
+            android:background="@drawable/edraduis"
+            android:id="@+id/putyzm"
+            android:layout_height="wrap_content"
+            android:hint="请输入验证码"/>
+
+        <Button
+            android:layout_marginTop="22dp"
+            android:layout_width="0dp"
+            android:textStyle="bold"
+            android:textSize="19dp"
+            android:layout_weight="3"
+            android:background="@drawable/buttonstyle_huoquyzm"
+            android:text="获取验证码"
+            android:id="@+id/huoqu"
+            android:layout_height="wrap_content"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="33dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="已有帐号,立即登录"
+        android:textStyle="bold"
+        android:textSize="22dp"
+        android:id="@+id/zhucefinish"
+        android:textColor="#E6E4E4"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:textStyle="bold"
+        android:id="@+id/zcyzc"
+        android:textSize="22dp"
+        android:text="注册"
+        android:background="@drawable/buttonstyle_zhuce"/>
+
+
+
+
+
+
+</LinearLayout>

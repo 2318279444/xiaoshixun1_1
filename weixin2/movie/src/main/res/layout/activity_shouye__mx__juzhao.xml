@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".shouye_fragment.shouye_jsyp.Shouye_Mx_Juzhao">
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/Shouye_juzhao_recyc"-->
+<!--        />-->
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:id="@+id/shouye_juzhaoima1"/>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/shouye_juzhaoima2"/>
+
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/shouye_juzhaoima3"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:id="@+id/shouye_juzhaoima4"/>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_marginLeft="15dp"
+            android:layout_height="200dp"
+            android:id="@+id/shouye_juzhaoima5"/>
+
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/shouye_juzhaoima6"/>
+    </LinearLayout>
+
+    
+    
+
+</LinearLayout>

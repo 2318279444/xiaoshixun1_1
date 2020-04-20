@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#110F49"
+    android:orientation="vertical"
+    tools:context=".yingyuan.YingTuiJianXiangqing">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+
+
+        <ImageView
+            android:layout_marginLeft="20dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/fanhui_wite"
+            android:id="@+id/tuijianXQfanhui"
+            android:textColor="#fff"
+            android:textSize="39dp"/>
+
+        <TextView
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="33dp"
+            android:textColor="#fff"
+            android:text="影院详情"/>
+
+    </RelativeLayout>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22dp"
+        android:textColor="#fff"
+        android:text="131213123132132"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/texttuijianXQ"/>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:tabTextColor="#fff"
+        app:tabGravity="fill"
+        app:tabTextAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:background="#1F1D63"
+        android:layout_weight="1"
+        android:id="@+id/tabXQ"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/pagerXQ"
+        android:layout_weight="9"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:background="#FFCA00"
+            android:id="@+id/Yingyuan_Pinglun"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold"
+                android:textSize="22dp"
+                android:textColor="#fff"
+                android:background="#FFCA00"
+                android:text="写评价"/>
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:id="@+id/Yingyuan_Paiqi"
+            android:background="#FF0000"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:textStyle="bold"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:textSize="22dp"
+                android:textColor="#fff"
+                android:background="#FF0000"
+                android:text="查看该影院电影排期"/>
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

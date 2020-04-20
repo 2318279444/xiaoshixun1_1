@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".shouye_fragment.ShouyeFragment">
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:background="#32378B"
+        app:tabTextColor="#AAAAAA"
+        app:tabSelectedTextColor="#FFFFFF"
+        app:tabTextAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        app:tabGravity="fill"
+        android:id="@+id/Shouye_tab" />
+
+    <androidx.viewpager.widget.ViewPager
+
+        android:background="#24325F"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/Shouye_pager"
+        android:layout_weight="9"/>
+
+</LinearLayout>

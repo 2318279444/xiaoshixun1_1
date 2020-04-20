@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/drawerlayout"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<!--    <android.support.design.widget.NavigationView-->
+<!--        android:id="@+id/navigationview"-->
+<!--        android:layout_gravity="left"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:fitsSystemWindows="true"-->
+<!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--        app:headerLayout="@layout/activity_handerlayout"-->
+<!--        app:menu="@menu/mymenu">-->
+
+
+
+<!--        <item-->
+<!--            android:id="@+id/page"-->
+<!--            android:icon="@drawable/radio_button_pic1"-->
+<!--            android:title="    首页"/>-->
+
+<!--        <item-->
+<!--            android:id="@+id/read"-->
+<!--            android:icon="@drawable/radio_button_pic2"-->
+<!--            android:title="    订阅"/>-->
+
+<!--        <item-->
+<!--            android:id="@+id/found"-->
+<!--            android:icon="@drawable/radio_button_pic3"-->
+<!--            android:title="    发现"/>-->
+
+<!--        <item        android:id="@+id/myself"-->
+<!--            android:icon="@drawable/radio_button_pic4"-->
+<!--            android:title="    我的"/>-->
+
+
+<!--        <ImageView-->
+<!--            android:id="@+id/person"-->
+<!--            android:layout_width="72dp"-->
+<!--            android:layout_height="72dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="42dp"-->
+<!--            android:src="@drawable/back1"/>-->
+<!--        <TextView-->
+<!--            android:id="@+id/tv_username"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="20sp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="24dp"-->
+<!--            android:textColor="#ffffff"-->
+<!--            android:textStyle="bold"-->
+<!--            android:text="坏小子"/>-->
+<!--        <TextView-->
+<!--            android:id="@+id/tv_lable"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="16sp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            android:textColor="#ffffff"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_marginBottom="18dp"-->
+<!--            android:text="人生像一场没有尽头的旅行"/>-->
+
+
+
+<!--    </android.support.design.widget.NavigationView>-->
+
+
+
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

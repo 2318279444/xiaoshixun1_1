@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/dyy"
+    tools:context=".flzc.LoginActivity">
+
+    <EditText
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"
+        android:background="@drawable/edraduis"
+        android:layout_width="350dp"
+        android:textStyle="bold"
+        android:hint="请输入用户名"
+        android:layout_height="wrap_content"
+        android:id="@+id/user"/>
+
+    <EditText
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:background="@drawable/edraduis"
+        android:layout_width="350dp"
+        android:hint="请输入密码"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:id="@+id/pwd"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_height="50dp">
+
+        <CheckBox
+            android:id="@+id/jizhu"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="记住密码" />
+
+        <CheckBox
+            android:layout_below="@+id/jizhu"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="自动登录"
+            android:id="@+id/zidong"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="登录"
+        android:textColor="#fff"
+        android:textSize="33dp"
+        android:background="@drawable/buttonstyle_denglu"
+        android:id="@+id/denglu"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="22dp"
+        android:text="-----------------或-----------------"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="33dp"
+        android:id="@+id/Shouye_weixin"
+        android:drawableTop="@drawable/wxxx3"
+        android:background="@drawable/buttonstyle_weixin"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22dp"
+        android:layout_marginTop="33dp"
+        android:text="暂无账号,立即注册"
+        android:textColor="#000000"
+        android:id="@+id/zhuce"/>
+
+
+
+
+
+
+
+</LinearLayout>

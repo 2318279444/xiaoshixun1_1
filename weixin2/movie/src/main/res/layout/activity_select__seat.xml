@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#141F55"
+    android:layout_height="match_parent"
+    tools:context=".Select_Seat">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#fff"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="22dp"
+            android:id="@+id/select_name"/>
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/seat_Back"
+        android:layout_width="@dimen/dp_20"
+        android:layout_height="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_50"
+        android:src="@drawable/zuo" />
+
+    <TextView
+        android:id="@+id/seat_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_45"
+        android:text="电影名称"
+        android:textColor="#fff"
+        android:textSize="@dimen/sp_15" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/seat_Name"
+        android:layout_marginBottom="@dimen/dp_50">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
+                android:id="@+id/sear_JieCao"
+                android:layout_width="@dimen/dp_300"
+                android:layout_height="@dimen/dp_100"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_10"></fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/seat_Xuan_Zuo"
+                android:layout_width="@dimen/dp_300"
+                android:layout_height="@dimen/dp_300"
+                android:layout_below="@id/sear_JieCao"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/jianbian"></androidx.recyclerview.widget.RecyclerView>
+
+            <LinearLayout
+                android:id="@+id/l1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/seat_Xuan_Zuo"
+                android:layout_marginTop="@dimen/dp_10"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:layout_width="@dimen/dp_16"
+                    android:layout_height="@dimen/dp_16"
+                    android:layout_marginLeft="@dimen/dp_60"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:background="@drawable/my_shape"
+                    android:button="@null"
+                    android:textColor="#fff" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:text="可选"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/sp_12" />
+
+                <CheckBox
+                    android:layout_width="@dimen/dp_16"
+                    android:layout_height="@dimen/dp_16"
+                    android:layout_marginLeft="@dimen/dp_40"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:background="@drawable/my_yellow"
+                    android:button="@null"
+                    android:textColor="#fff" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:text="已售"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/sp_12" />
+
+                <CheckBox
+                    android:layout_width="@dimen/dp_16"
+                    android:layout_height="@dimen/dp_16"
+                    android:layout_marginLeft="@dimen/dp_40"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:background="@drawable/my_red"
+                    android:button="@null"
+                    android:textColor="#fff" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:text="选中"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/sp_12" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/t1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/l1"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="选择影厅和时间（6）"
+                android:textColor="#fff"
+                android:textSize="@dimen/sp_12" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/seat_Xinxi"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_100"
+                android:layout_below="@id/t1"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="11dp"></androidx.recyclerview.widget.RecyclerView>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/seat_but"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/but_text7"
+        android:text="请先选座"
+        android:textColor="#fff"
+        android:textSize="@dimen/sp_12" />
+</RelativeLayout>

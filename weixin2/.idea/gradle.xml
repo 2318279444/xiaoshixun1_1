@@ -1,15 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <compositeConfiguration>
-          <compositeBuild compositeDefinitionSource="SCRIPT" />
-        </compositeConfiguration>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/cela" />
+            <option value="$PROJECT_DIR$/dayi_yuekao" />
+            <option value="$PROJECT_DIR$/dengxianchao20200414" />
+            <option value="$PROJECT_DIR$/dingwei1" />
+            <option value="$PROJECT_DIR$/huan_ima" />
+            <option value="$PROJECT_DIR$/movie" />
+            <option value="$PROJECT_DIR$/mvcmvp_project" />
+            <option value="$PROJECT_DIR$/mvcmvp_project2" />
+            <option value="$PROJECT_DIR$/okhttp_huancun" />
+            <option value="$PROJECT_DIR$/okhttp_huancun3" />
+            <option value="$PROJECT_DIR$/okhttp_huancun4" />
+            <option value="$PROJECT_DIR$/rxjava1" />
+            <option value="$PROJECT_DIR$/rxjava2" />
+            <option value="$PROJECT_DIR$/select_pal" />
+            <option value="$PROJECT_DIR$/wx" />
+            <option value="$PROJECT_DIR$/xg" />
+            <option value="$PROJECT_DIR$/ysh" />
+          </set>
+        </option>
         <option name="resolveModulePerSourceSet" value="false" />
-        <option name="testRunner" value="PLATFORM" />
       </GradleProjectSettings>
     </option>
   </component>
